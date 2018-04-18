@@ -9,8 +9,6 @@ public class SportFootballAward {
 
     private Integer lineId;
 
-    private String dgAward;
-
     private String bfAward;
 
     private String bqcAward;
@@ -21,7 +19,7 @@ public class SportFootballAward {
 
     private String spfAward;
 
-    private String bfStatus;
+    private String bfStatus;//1:在售，2，停售，3取消
 
     private String bqcStatus;
 
@@ -31,7 +29,7 @@ public class SportFootballAward {
 
     private String spfStatus;
 
-    private String dgStatus;
+    private String dgStatus;//单关在
 
     private Date createTime;
 
@@ -57,14 +55,6 @@ public class SportFootballAward {
 
     public void setLineId(Integer lineId) {
         this.lineId = lineId;
-    }
-
-    public String getDgAward() {
-        return dgAward;
-    }
-
-    public void setDgAward(String dgAward) {
-        this.dgAward = dgAward == null ? null : dgAward.trim();
     }
 
     public String getBfAward() {
