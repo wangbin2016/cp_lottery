@@ -4,9 +4,9 @@ import com.caipiao.lottery.entity.sport.SportFootballAward;
 
 public interface SportFootballAwardService {
     int deleteByPrimaryKey(Integer id);
-
-    int insert(SportFootballAward record);
-
+    
+    int insert(SportFootballAward record);     
+    
     int insertSelective(SportFootballAward record);
 
     SportFootballAward selectByPrimaryKey(Integer id);

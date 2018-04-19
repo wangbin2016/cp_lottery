@@ -30,6 +30,12 @@ public class SportFootballMatch {
     private String guestGroup;
 
     private Date createTime;
+    
+    private String homeSupport;
+    
+    private String drawSupport;
+    
+    private String guestSupport;
 
     public Integer getId() {
         return id;
@@ -142,4 +148,28 @@ public class SportFootballMatch {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+	public String getHomeSupport() {
+		return homeSupport;
+	}
+
+	public void setHomeSupport(String homeSupport) {
+		this.homeSupport = homeSupport;
+	}
+
+	public String getDrawSupport() {
+		return drawSupport;
+	}
+
+	public void setDrawSupport(String drawSupport) {
+		this.drawSupport = drawSupport;
+	}
+
+	public String getGuestSupport() {
+		return guestSupport;
+	}
+
+	public void setGuestSupport(String guestSupport) {
+		this.guestSupport = guestSupport;
+	}
 }
