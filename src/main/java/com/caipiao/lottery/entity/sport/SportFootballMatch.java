@@ -7,7 +7,7 @@ public class SportFootballMatch {
 
     private String homeTeam;
 
-    private String color;
+    private Integer leagueInfoId;
 
     private String guestTeam;
 
@@ -30,12 +30,14 @@ public class SportFootballMatch {
     private String guestGroup;
 
     private Date createTime;
-    
+
     private String homeSupport;
-    
+
     private String drawSupport;
-    
+
     private String guestSupport;
+
+    private Date createDate;
 
     public Integer getId() {
         return id;
@@ -53,12 +55,12 @@ public class SportFootballMatch {
         this.homeTeam = homeTeam == null ? null : homeTeam.trim();
     }
 
-    public String getColor() {
-        return color;
+    public Integer getLeagueInfoId() {
+        return leagueInfoId;
     }
 
-    public void setColor(String color) {
-        this.color = color == null ? null : color.trim();
+    public void setLeagueInfoId(Integer leagueInfoId) {
+        this.leagueInfoId = leagueInfoId;
     }
 
     public String getGuestTeam() {
@@ -149,27 +151,35 @@ public class SportFootballMatch {
         this.createTime = createTime;
     }
 
-	public String getHomeSupport() {
-		return homeSupport;
-	}
+    public String getHomeSupport() {
+        return homeSupport;
+    }
 
-	public void setHomeSupport(String homeSupport) {
-		this.homeSupport = homeSupport;
-	}
+    public void setHomeSupport(String homeSupport) {
+        this.homeSupport = homeSupport == null ? null : homeSupport.trim();
+    }
 
-	public String getDrawSupport() {
-		return drawSupport;
-	}
+    public String getDrawSupport() {
+        return drawSupport;
+    }
 
-	public void setDrawSupport(String drawSupport) {
-		this.drawSupport = drawSupport;
-	}
+    public void setDrawSupport(String drawSupport) {
+        this.drawSupport = drawSupport == null ? null : drawSupport.trim();
+    }
 
-	public String getGuestSupport() {
-		return guestSupport;
-	}
+    public String getGuestSupport() {
+        return guestSupport;
+    }
 
-	public void setGuestSupport(String guestSupport) {
-		this.guestSupport = guestSupport;
-	}
+    public void setGuestSupport(String guestSupport) {
+        this.guestSupport = guestSupport == null ? null : guestSupport.trim();
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
 }

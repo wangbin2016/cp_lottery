@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caipiao.lottery.dao.sport.SportLeagueInfoMapper">
+  <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="short_name" jdbcType="VARCHAR" property="shortName" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="dc_name" jdbcType="VARCHAR" property="dcName" />
+    <result column="jc_name" jdbcType="VARCHAR" property="jcName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, short_name, color, pic_url, dc_name, jc_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sport_league_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sport_league_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    insert into sport_league_info (id, name, short_name, 
+      color, pic_url, dc_name, 
+      jc_name)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{shortName,jdbcType=VARCHAR}, 
+      #{color,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{dcName,jdbcType=VARCHAR}, 
+      #{jcName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    insert into sport_league_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="shortName != null">
+        short_name,
+      </if>
+      <if test="color != null">
+        color,
+      </if>
+      <if test="picUrl != null">
+        pic_url,
+      </if>
+      <if test="dcName != null">
+        dc_name,
+      </if>
+      <if test="jcName != null">
+        jc_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null">
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null">
+        #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="dcName != null">
+        #{dcName,jdbcType=VARCHAR},
+      </if>
+      <if test="jcName != null">
+        #{jcName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    update sport_league_info
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null">
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null">
+        pic_url = #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="dcName != null">
+        dc_name = #{dcName,jdbcType=VARCHAR},
+      </if>
+      <if test="jcName != null">
+        jc_name = #{jcName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    update sport_league_info
+    set name = #{name,jdbcType=VARCHAR},
+      short_name = #{shortName,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      dc_name = #{dcName,jdbcType=VARCHAR},
+      jc_name = #{jcName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="short_name" jdbcType="VARCHAR" property="shortName" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="dc_name" jdbcType="VARCHAR" property="dcName" />
+    <result column="jc_name" jdbcType="VARCHAR" property="jcName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, short_name, color, pic_url, dc_name, jc_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sport_league_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sport_league_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    insert into sport_league_info (id, name, short_name, 
+      color, pic_url, dc_name, 
+      jc_name)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{shortName,jdbcType=VARCHAR}, 
+      #{color,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{dcName,jdbcType=VARCHAR}, 
+      #{jcName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    insert into sport_league_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="shortName != null">
+        short_name,
+      </if>
+      <if test="color != null">
+        color,
+      </if>
+      <if test="picUrl != null">
+        pic_url,
+      </if>
+      <if test="dcName != null">
+        dc_name,
+      </if>
+      <if test="jcName != null">
+        jc_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null">
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null">
+        #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="dcName != null">
+        #{dcName,jdbcType=VARCHAR},
+      </if>
+      <if test="jcName != null">
+        #{jcName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    update sport_league_info
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="shortName != null">
+        short_name = #{shortName,jdbcType=VARCHAR},
+      </if>
+      <if test="color != null">
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="picUrl != null">
+        pic_url = #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="dcName != null">
+        dc_name = #{dcName,jdbcType=VARCHAR},
+      </if>
+      <if test="jcName != null">
+        jc_name = #{jcName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportLeagueInfo">
+    update sport_league_info
+    set name = #{name,jdbcType=VARCHAR},
+      short_name = #{shortName,jdbcType=VARCHAR},
+      color = #{color,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      dc_name = #{dcName,jdbcType=VARCHAR},
+      jc_name = #{jcName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

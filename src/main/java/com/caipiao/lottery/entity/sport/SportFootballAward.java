@@ -19,7 +19,7 @@ public class SportFootballAward {
 
     private String spfAward;
 
-    private String bfStatus;//1:在售，2，停售，3取消
+    private String bfStatus;
 
     private String bqcStatus;
 
@@ -29,7 +29,7 @@ public class SportFootballAward {
 
     private String spfStatus;
 
-    private String dgStatus;//单关在
+    private String dgStatus;
 
     private Date createTime;
 

@@ -4,6 +4,250 @@
   <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportFootballMatch">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="home_team" jdbcType="VARCHAR" property="homeTeam" />
+    <result column="league_info_id" jdbcType="INTEGER" property="leagueInfoId" />
+    <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
+    <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
+    <result column="inttime" jdbcType="VARCHAR" property="inttime" />
+    <result column="line_id" jdbcType="VARCHAR" property="lineId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="home_score" jdbcType="INTEGER" property="homeScore" />
+    <result column="guest_score" jdbcType="INTEGER" property="guestScore" />
+    <result column="conncede" jdbcType="INTEGER" property="conncede" />
+    <result column="home_group" jdbcType="VARCHAR" property="homeGroup" />
+    <result column="guest_group" jdbcType="VARCHAR" property="guestGroup" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="home_support" jdbcType="VARCHAR" property="homeSupport" />
+    <result column="draw_support" jdbcType="VARCHAR" property="drawSupport" />
+    <result column="guest_support" jdbcType="VARCHAR" property="guestSupport" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, home_team, league_info_id, guest_team, match_time, inttime, line_id, status, 
+    home_score, guest_score, conncede, home_group, guest_group, create_time, home_support, 
+    draw_support, guest_support, create_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sport_football_match
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sport_football_match
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
+    insert into sport_football_match (id, home_team, league_info_id, 
+      guest_team, match_time, inttime, 
+      line_id, status, home_score, 
+      guest_score, conncede, home_group, 
+      guest_group, create_time, home_support, 
+      draw_support, guest_support, create_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=INTEGER}, 
+      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{inttime,jdbcType=VARCHAR}, 
+      #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
+      #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
+      #{guestGroup,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{homeSupport,jdbcType=VARCHAR}, 
+      #{drawSupport,jdbcType=VARCHAR}, #{guestSupport,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
+    insert into sport_football_match
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="homeTeam != null">
+        home_team,
+      </if>
+      <if test="leagueInfoId != null">
+        league_info_id,
+      </if>
+      <if test="guestTeam != null">
+        guest_team,
+      </if>
+      <if test="matchTime != null">
+        match_time,
+      </if>
+      <if test="inttime != null">
+        inttime,
+      </if>
+      <if test="lineId != null">
+        line_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="homeScore != null">
+        home_score,
+      </if>
+      <if test="guestScore != null">
+        guest_score,
+      </if>
+      <if test="conncede != null">
+        conncede,
+      </if>
+      <if test="homeGroup != null">
+        home_group,
+      </if>
+      <if test="guestGroup != null">
+        guest_group,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="homeSupport != null">
+        home_support,
+      </if>
+      <if test="drawSupport != null">
+        draw_support,
+      </if>
+      <if test="guestSupport != null">
+        guest_support,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="homeTeam != null">
+        #{homeTeam,jdbcType=VARCHAR},
+      </if>
+      <if test="leagueInfoId != null">
+        #{leagueInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="guestTeam != null">
+        #{guestTeam,jdbcType=VARCHAR},
+      </if>
+      <if test="matchTime != null">
+        #{matchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inttime != null">
+        #{inttime,jdbcType=VARCHAR},
+      </if>
+      <if test="lineId != null">
+        #{lineId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="homeScore != null">
+        #{homeScore,jdbcType=INTEGER},
+      </if>
+      <if test="guestScore != null">
+        #{guestScore,jdbcType=INTEGER},
+      </if>
+      <if test="conncede != null">
+        #{conncede,jdbcType=INTEGER},
+      </if>
+      <if test="homeGroup != null">
+        #{homeGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="guestGroup != null">
+        #{guestGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="homeSupport != null">
+        #{homeSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="drawSupport != null">
+        #{drawSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="guestSupport != null">
+        #{guestSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
+    update sport_football_match
+    <set>
+      <if test="homeTeam != null">
+        home_team = #{homeTeam,jdbcType=VARCHAR},
+      </if>
+      <if test="leagueInfoId != null">
+        league_info_id = #{leagueInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="guestTeam != null">
+        guest_team = #{guestTeam,jdbcType=VARCHAR},
+      </if>
+      <if test="matchTime != null">
+        match_time = #{matchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inttime != null">
+        inttime = #{inttime,jdbcType=VARCHAR},
+      </if>
+      <if test="lineId != null">
+        line_id = #{lineId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="homeScore != null">
+        home_score = #{homeScore,jdbcType=INTEGER},
+      </if>
+      <if test="guestScore != null">
+        guest_score = #{guestScore,jdbcType=INTEGER},
+      </if>
+      <if test="conncede != null">
+        conncede = #{conncede,jdbcType=INTEGER},
+      </if>
+      <if test="homeGroup != null">
+        home_group = #{homeGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="guestGroup != null">
+        guest_group = #{guestGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="homeSupport != null">
+        home_support = #{homeSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="drawSupport != null">
+        draw_support = #{drawSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="guestSupport != null">
+        guest_support = #{guestSupport,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
+    update sport_football_match
+    set home_team = #{homeTeam,jdbcType=VARCHAR},
+      league_info_id = #{leagueInfoId,jdbcType=INTEGER},
+      guest_team = #{guestTeam,jdbcType=VARCHAR},
+      match_time = #{matchTime,jdbcType=TIMESTAMP},
+      inttime = #{inttime,jdbcType=VARCHAR},
+      line_id = #{lineId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      home_score = #{homeScore,jdbcType=INTEGER},
+      guest_score = #{guestScore,jdbcType=INTEGER},
+      conncede = #{conncede,jdbcType=INTEGER},
+      home_group = #{homeGroup,jdbcType=VARCHAR},
+      guest_group = #{guestGroup,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      home_support = #{homeSupport,jdbcType=VARCHAR},
+      draw_support = #{drawSupport,jdbcType=VARCHAR},
+      guest_support = #{guestSupport,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportFootballMatch">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="home_team" jdbcType="VARCHAR" property="homeTeam" />
     <result column="color" jdbcType="VARCHAR" property="color" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
     <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
