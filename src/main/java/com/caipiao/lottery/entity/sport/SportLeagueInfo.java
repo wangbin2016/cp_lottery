@@ -1,5 +1,10 @@
 package com.caipiao.lottery.entity.sport;
 
+/**
+ * 竞彩足球联盟
+ * @author WangBin
+ *
+ */
 public class SportLeagueInfo {
     private Integer id;
 
