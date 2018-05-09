@@ -1,9 +1,12 @@
 package com.caipiao.lottery.service.sport.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.caipiao.lottery.dao.sport.SportFootballMatchMapper;
 import com.caipiao.lottery.entity.sport.SportFootballMatch;
 import com.caipiao.lottery.service.sport.SportFootballMatchService;
 
+@Service("SportFootballMatchService")
 public class SportFootballMatchServiceImpl implements SportFootballMatchService {
 	private SportFootballMatchMapper sportFootballMatchMapper;
 	@Override
