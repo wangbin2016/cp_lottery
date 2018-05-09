@@ -1,8 +1,8 @@
-package com.caipiao.lottery.service.impl;
+package com.caipiao.lottery.service.sport.impl;
 
 import com.caipiao.lottery.dao.sport.SportFootballMatchMapper;
 import com.caipiao.lottery.entity.sport.SportFootballMatch;
-import com.caipiao.lottery.service.SportFootballMatchService;
+import com.caipiao.lottery.service.sport.SportFootballMatchService;
 
 public class SportFootballMatchServiceImpl implements SportFootballMatchService {
 	private SportFootballMatchMapper sportFootballMatchMapper;

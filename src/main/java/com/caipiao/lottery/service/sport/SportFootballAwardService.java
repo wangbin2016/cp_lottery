@@ -1,4 +1,4 @@
-package com.caipiao.lottery.service;
+package com.caipiao.lottery.service.sport;
 
 import com.caipiao.lottery.entity.sport.SportFootballAward;
 
