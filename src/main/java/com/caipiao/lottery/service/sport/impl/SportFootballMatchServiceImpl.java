@@ -6,7 +6,7 @@ import com.caipiao.lottery.dao.sport.SportFootballMatchMapper;
 import com.caipiao.lottery.entity.sport.SportFootballMatch;
 import com.caipiao.lottery.service.sport.SportFootballMatchService;
 
-@Service("SportFootballMatchService")
+@Service("sportFootballMatchService")
 public class SportFootballMatchServiceImpl implements SportFootballMatchService {
 	private SportFootballMatchMapper sportFootballMatchMapper;
 	@Override

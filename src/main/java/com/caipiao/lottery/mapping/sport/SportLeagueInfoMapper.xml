@@ -227,4 +227,15 @@
       jc_name = #{jcName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <insert id="addSportLeagueInfos">
+	  insert into sport_league_info (id, name, short_name, 
+	      color, pic_url, dc_name, 
+	      jc_name)
+	    values 
+    <foreach collection="leagueInfos" item="info" separator=","> 
+	   values (#{info.id,jdbcType=INTEGER}, #{info.name,jdbcType=VARCHAR}, #{info.shortName,jdbcType=VARCHAR}, 
+      #{info.color,jdbcType=VARCHAR}, #{info.picUrl,jdbcType=VARCHAR}, #{info.dcName,jdbcType=VARCHAR}, 
+      #{info.jcName,jdbcType=VARCHAR})
+     </foreach>
+  </insert> 
 </mapper>

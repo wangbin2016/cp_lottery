@@ -248,7 +248,7 @@
   <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportFootballMatch">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="home_team" jdbcType="VARCHAR" property="homeTeam" />
-    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="league_Info_Id" jdbcType="VARCHAR" property="leagueInfoId" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
     <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
     <result column="inttime" jdbcType="VARCHAR" property="inttime" />
@@ -262,7 +262,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, home_team, color, guest_team, match_time, inttime, line_id, status, home_score, 
+    id, home_team, league_Info_Id, guest_team, match_time, inttime, line_id, status, home_score, 
     guest_score, conncede, home_group, guest_group, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -276,12 +276,12 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
-    insert into sport_football_match (id, home_team, color, 
+    insert into sport_football_match (id, home_team, league_Info_Id, 
       guest_team, match_time, inttime, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time)
-    values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=VARCHAR}, 
       #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{inttime,jdbcType=VARCHAR}, 
       #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
       #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
@@ -296,8 +296,8 @@
       <if test="homeTeam != null">
         home_team,
       </if>
-      <if test="color != null">
-        color,
+      <if test="leagueInfoId != null">
+        leagueInfoId,
       </if>
       <if test="guestTeam != null">
         guest_team,
@@ -340,8 +340,8 @@
       <if test="homeTeam != null">
         #{homeTeam,jdbcType=VARCHAR},
       </if>
-      <if test="color != null">
-        #{color,jdbcType=VARCHAR},
+      <if test="leagueInfoId != null">
+        #{leagueInfoId,jdbcType=VARCHAR},
       </if>
       <if test="guestTeam != null">
         #{guestTeam,jdbcType=VARCHAR},
@@ -384,8 +384,8 @@
       <if test="homeTeam != null">
         home_team = #{homeTeam,jdbcType=VARCHAR},
       </if>
-      <if test="color != null">
-        color = #{color,jdbcType=VARCHAR},
+      <if test="leagueInfoId != null">
+        league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       </if>
       <if test="guestTeam != null">
         guest_team = #{guestTeam,jdbcType=VARCHAR},
@@ -426,7 +426,7 @@
   <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
     update sport_football_match
     set home_team = #{homeTeam,jdbcType=VARCHAR},
-      color = #{color,jdbcType=VARCHAR},
+      league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       guest_team = #{guestTeam,jdbcType=VARCHAR},
       match_time = #{matchTime,jdbcType=TIMESTAMP},
       inttime = #{inttime,jdbcType=VARCHAR},
@@ -443,7 +443,7 @@
   <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportFootballMatch">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="home_team" jdbcType="VARCHAR" property="homeTeam" />
-    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="league_info_id" jdbcType="VARCHAR" property="leagueInfoId" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
     <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
     <result column="inttime" jdbcType="VARCHAR" property="inttime" />
@@ -457,7 +457,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, home_team, color, guest_team, match_time, inttime, line_id, status, home_score, 
+    id, home_team, league_Info_Id, guest_team, match_time, inttime, line_id, status, home_score, 
     guest_score, conncede, home_group, guest_group, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -471,12 +471,12 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
-    insert into sport_football_match (id, home_team, color, 
+    insert into sport_football_match (id, home_team, league_Info_Id, 
       guest_team, match_time, inttime, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time)
-    values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=VARCHAR}, 
       #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{inttime,jdbcType=VARCHAR}, 
       #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
       #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
@@ -491,8 +491,8 @@
       <if test="homeTeam != null">
         home_team,
       </if>
-      <if test="color != null">
-        color,
+      <if test="leagueInfoId != null">
+        league_Info_Id,
       </if>
       <if test="guestTeam != null">
         guest_team,
@@ -535,8 +535,8 @@
       <if test="homeTeam != null">
         #{homeTeam,jdbcType=VARCHAR},
       </if>
-      <if test="color != null">
-        #{color,jdbcType=VARCHAR},
+      <if test="leagueInfoId != null">
+        #{leagueInfoId,jdbcType=VARCHAR},
       </if>
       <if test="guestTeam != null">
         #{guestTeam,jdbcType=VARCHAR},
@@ -579,8 +579,8 @@
       <if test="homeTeam != null">
         home_team = #{homeTeam,jdbcType=VARCHAR},
       </if>
-      <if test="color != null">
-        color = #{color,jdbcType=VARCHAR},
+      <if test="leagueInfoId != null">
+        league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       </if>
       <if test="guestTeam != null">
         guest_team = #{guestTeam,jdbcType=VARCHAR},
@@ -621,7 +621,7 @@
   <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
     update sport_football_match
     set home_team = #{homeTeam,jdbcType=VARCHAR},
-      color = #{color,jdbcType=VARCHAR},
+      league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       guest_team = #{guestTeam,jdbcType=VARCHAR},
       match_time = #{matchTime,jdbcType=TIMESTAMP},
       inttime = #{inttime,jdbcType=VARCHAR},
@@ -638,7 +638,7 @@
   <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportFootballMatch">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="home_team" jdbcType="VARCHAR" property="homeTeam" />
-    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="league_Info_Id" jdbcType="VARCHAR" property="leagueInfoId" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
     <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
     <result column="inttime" jdbcType="VARCHAR" property="inttime" />
@@ -652,7 +652,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, home_team, color, guest_team, match_time, inttime, line_id, status, home_score, 
+    id, home_team, league_Info_Id, guest_team, match_time, inttime, line_id, status, home_score, 
     guest_score, conncede, home_group, guest_group, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -666,12 +666,12 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
-    insert into sport_football_match (id, home_team, color, 
+    insert into sport_football_match (id, home_team, league_Info_Id, 
       guest_team, match_time, inttime, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time)
-    values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=VARCHAR}, 
       #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{inttime,jdbcType=VARCHAR}, 
       #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
       #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
@@ -686,8 +686,8 @@
       <if test="homeTeam != null">
         home_team,
       </if>
-      <if test="color != null">
-        color,
+      <if test="leagueInfoId != null">
+        league_Info_Id,
       </if>
       <if test="guestTeam != null">
         guest_team,
@@ -730,8 +730,8 @@
       <if test="homeTeam != null">
         #{homeTeam,jdbcType=VARCHAR},
       </if>
-      <if test="color != null">
-        #{color,jdbcType=VARCHAR},
+      <if test="leagueInfoId != null">
+        #{leagueInfoId,jdbcType=VARCHAR},
       </if>
       <if test="guestTeam != null">
         #{guestTeam,jdbcType=VARCHAR},
@@ -774,8 +774,8 @@
       <if test="homeTeam != null">
         home_team = #{homeTeam,jdbcType=VARCHAR},
       </if>
-      <if test="color != null">
-        color = #{color,jdbcType=VARCHAR},
+      <if test="leagueInfoId != null">
+        league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       </if>
       <if test="guestTeam != null">
         guest_team = #{guestTeam,jdbcType=VARCHAR},
@@ -816,7 +816,7 @@
   <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
     update sport_football_match
     set home_team = #{homeTeam,jdbcType=VARCHAR},
-      color = #{color,jdbcType=VARCHAR},
+      league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       guest_team = #{guestTeam,jdbcType=VARCHAR},
       match_time = #{matchTime,jdbcType=TIMESTAMP},
       inttime = #{inttime,jdbcType=VARCHAR},
@@ -830,4 +830,20 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <insert id="addSportFootballMatchs">
+  	insert into sport_football_match (id, home_team, league_Info_Id, 
+      guest_team, match_time, inttime, 
+      line_id, status, home_score, 
+      guest_score, conncede, home_group, 
+      guest_group, create_time)
+    values 
+    <foreach collection="matchs" item="match" separator=","> 
+	   (#{match.id,jdbcType=INTEGER}, #{match.homeTeam,jdbcType=VARCHAR}, #{match.leagueInfoId,jdbcType=VARCHAR}, 
+      #{match.guestTeam,jdbcType=VARCHAR}, #{match.matchTime,jdbcType=TIMESTAMP}, #{match.inttime,jdbcType=VARCHAR}, 
+      #{match.lineId,jdbcType=VARCHAR}, #{match.status,jdbcType=INTEGER}, #{match.homeScore,jdbcType=INTEGER}, 
+      #{match.guestScore,jdbcType=INTEGER}, #{match.conncede,jdbcType=INTEGER}, #{match.homeGroup,jdbcType=VARCHAR}, 
+      #{match.guestGroup,jdbcType=VARCHAR}, #{match.createTime,jdbcType=TIMESTAMP})
+     </foreach>
+  </insert> 
 </mapper>

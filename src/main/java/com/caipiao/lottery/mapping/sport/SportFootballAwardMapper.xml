@@ -865,5 +865,22 @@
       dg_status = #{dgStatus,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
-  </update>
+  </update>  
+  <insert id="addSportFootballAwards">
+  	insert into sport_football_award (id, int_time, line_id, 
+      bf_Award, bqc_Award, jqs_Award, 
+      rqspf_Award, spf_Award, bf_status, 
+      bqc_status, jqs_status, rqspf_status, 
+      spf_status, dg_status, create_time
+      )
+    values 
+    <foreach collection="awards" item="award" separator=","> 
+	    (#{award.id,jdbcType=INTEGER}, #{award.intTime,jdbcType=INTEGER}, #{award.lineId,jdbcType=INTEGER}, 
+	      #{award.bfAward,jdbcType=VARCHAR}, #{award.bqcAward,jdbcType=VARCHAR}, #{award.jqsAward,jdbcType=VARCHAR}, 
+	      #{award.rqspfAward,jdbcType=VARCHAR}, #{award.spfAward,jdbcType=VARCHAR}, #{award.bfStatus,jdbcType=VARCHAR}, 
+	      #{award.bqcStatus,jdbcType=VARCHAR}, #{award.jqsStatus,jdbcType=VARCHAR}, #{award.rqspfStatus,jdbcType=VARCHAR}, 
+	      #{award.spfStatus,jdbcType=VARCHAR}, #{award.dgStatus,jdbcType=VARCHAR}, #{award.createTime,jdbcType=TIMESTAMP}
+	      )
+     </foreach>
+  </insert> 
 </mapper>

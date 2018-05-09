@@ -1,5 +1,9 @@
 package com.caipiao.lottery.dao.sport;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.caipiao.lottery.entity.sport.SportFootballMatch;
 
 public interface SportFootballMatchMapper {
@@ -14,4 +18,6 @@ public interface SportFootballMatchMapper {
     int updateByPrimaryKeySelective(SportFootballMatch record);
 
     int updateByPrimaryKey(SportFootballMatch record);
+    
+    void addSportFootballMatchs(@Param("matchs")List<SportFootballMatch> matchs);
 }
