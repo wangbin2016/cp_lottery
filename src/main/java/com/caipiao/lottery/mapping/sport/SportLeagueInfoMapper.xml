@@ -238,4 +238,12 @@
       #{info.jcName,jdbcType=VARCHAR})
      </foreach>
   </insert> 
+  <select id="selectByLikeName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sport_league_info
+    where name = #{name,jdbcType=VARCHAR} 
+    or
+    short_name = #{name,jdbcType=VARCHAR} 
+  </select>
 </mapper>

@@ -7,7 +7,7 @@
     <result column="league_info_id" jdbcType="INTEGER" property="leagueInfoId" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
     <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
-    <result column="inttime" jdbcType="VARCHAR" property="inttime" />
+    <result column="intTime" jdbcType="VARCHAR" property="intTime" />
     <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="home_score" jdbcType="INTEGER" property="homeScore" />
@@ -22,7 +22,7 @@
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, home_team, league_info_id, guest_team, match_time, inttime, line_id, status, 
+    id, home_team, league_info_id, guest_team, match_time, intTime, line_id, status, 
     home_score, guest_score, conncede, home_group, guest_group, create_time, home_support, 
     draw_support, guest_support, create_date
   </sql>
@@ -38,14 +38,14 @@
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
     insert into sport_football_match (id, home_team, league_info_id, 
-      guest_team, match_time, inttime, 
+      guest_team, match_time, intTime, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time, home_support, 
       draw_support, guest_support, create_date
       )
     values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=INTEGER}, 
-      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{inttime,jdbcType=VARCHAR}, 
+      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{intTime,jdbcType=VARCHAR}, 
       #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
       #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
       #{guestGroup,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{homeSupport,jdbcType=VARCHAR}, 
@@ -70,8 +70,8 @@
       <if test="matchTime != null">
         match_time,
       </if>
-      <if test="inttime != null">
-        inttime,
+      <if test="intTime != null">
+        intTime,
       </if>
       <if test="lineId != null">
         line_id,
@@ -126,8 +126,8 @@
       <if test="matchTime != null">
         #{matchTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="inttime != null">
-        #{inttime,jdbcType=VARCHAR},
+      <if test="intTime != null">
+        #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
         #{lineId,jdbcType=VARCHAR},
@@ -182,8 +182,8 @@
       <if test="matchTime != null">
         match_time = #{matchTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="inttime != null">
-        inttime = #{inttime,jdbcType=VARCHAR},
+      <if test="intTime != null">
+        intTime = #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
         line_id = #{lineId,jdbcType=VARCHAR},
@@ -230,7 +230,7 @@
       league_info_id = #{leagueInfoId,jdbcType=INTEGER},
       guest_team = #{guestTeam,jdbcType=VARCHAR},
       match_time = #{matchTime,jdbcType=TIMESTAMP},
-      inttime = #{inttime,jdbcType=VARCHAR},
+      intTime = #{intTime,jdbcType=VARCHAR},
       line_id = #{lineId,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       home_score = #{homeScore,jdbcType=INTEGER},
@@ -251,7 +251,7 @@
     <result column="league_Info_Id" jdbcType="VARCHAR" property="leagueInfoId" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
     <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
-    <result column="inttime" jdbcType="VARCHAR" property="inttime" />
+    <result column="intTime" jdbcType="VARCHAR" property="intTime" />
     <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="home_score" jdbcType="INTEGER" property="homeScore" />
@@ -262,7 +262,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, home_team, league_Info_Id, guest_team, match_time, inttime, line_id, status, home_score, 
+    id, home_team, league_Info_Id, guest_team, match_time, intTime, line_id, status, home_score, 
     guest_score, conncede, home_group, guest_group, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -277,12 +277,12 @@
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
     insert into sport_football_match (id, home_team, league_Info_Id, 
-      guest_team, match_time, inttime, 
+      guest_team, match_time, intTime, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time)
     values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=VARCHAR}, 
-      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{inttime,jdbcType=VARCHAR}, 
+      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{intTime,jdbcType=VARCHAR}, 
       #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
       #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
       #{guestGroup,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
@@ -305,8 +305,8 @@
       <if test="matchTime != null">
         match_time,
       </if>
-      <if test="inttime != null">
-        inttime,
+      <if test="intTime != null">
+        intTime,
       </if>
       <if test="lineId != null">
         line_id,
@@ -349,8 +349,8 @@
       <if test="matchTime != null">
         #{matchTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="inttime != null">
-        #{inttime,jdbcType=VARCHAR},
+      <if test="intTime != null">
+        #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
         #{lineId,jdbcType=VARCHAR},
@@ -393,8 +393,8 @@
       <if test="matchTime != null">
         match_time = #{matchTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="inttime != null">
-        inttime = #{inttime,jdbcType=VARCHAR},
+      <if test="intTime != null">
+        intTime = #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
         line_id = #{lineId,jdbcType=VARCHAR},
@@ -429,7 +429,7 @@
       league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       guest_team = #{guestTeam,jdbcType=VARCHAR},
       match_time = #{matchTime,jdbcType=TIMESTAMP},
-      inttime = #{inttime,jdbcType=VARCHAR},
+      intTime = #{intTime,jdbcType=VARCHAR},
       line_id = #{lineId,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       home_score = #{homeScore,jdbcType=INTEGER},
@@ -446,7 +446,7 @@
     <result column="league_info_id" jdbcType="VARCHAR" property="leagueInfoId" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
     <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
-    <result column="inttime" jdbcType="VARCHAR" property="inttime" />
+    <result column="intTime" jdbcType="VARCHAR" property="intTime" />
     <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="home_score" jdbcType="INTEGER" property="homeScore" />
@@ -457,7 +457,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, home_team, league_Info_Id, guest_team, match_time, inttime, line_id, status, home_score, 
+    id, home_team, league_Info_Id, guest_team, match_time, intTime, line_id, status, home_score, 
     guest_score, conncede, home_group, guest_group, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -472,12 +472,12 @@
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
     insert into sport_football_match (id, home_team, league_Info_Id, 
-      guest_team, match_time, inttime, 
+      guest_team, match_time, intTime, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time)
     values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=VARCHAR}, 
-      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{inttime,jdbcType=VARCHAR}, 
+      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{intTime,jdbcType=VARCHAR}, 
       #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
       #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
       #{guestGroup,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
@@ -500,8 +500,8 @@
       <if test="matchTime != null">
         match_time,
       </if>
-      <if test="inttime != null">
-        inttime,
+      <if test="intTime != null">
+        intTime,
       </if>
       <if test="lineId != null">
         line_id,
@@ -544,8 +544,8 @@
       <if test="matchTime != null">
         #{matchTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="inttime != null">
-        #{inttime,jdbcType=VARCHAR},
+      <if test="intTime != null">
+        #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
         #{lineId,jdbcType=VARCHAR},
@@ -588,8 +588,8 @@
       <if test="matchTime != null">
         match_time = #{matchTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="inttime != null">
-        inttime = #{inttime,jdbcType=VARCHAR},
+      <if test="intTime != null">
+        intTime = #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
         line_id = #{lineId,jdbcType=VARCHAR},
@@ -624,7 +624,7 @@
       league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       guest_team = #{guestTeam,jdbcType=VARCHAR},
       match_time = #{matchTime,jdbcType=TIMESTAMP},
-      inttime = #{inttime,jdbcType=VARCHAR},
+      intTime = #{intTime,jdbcType=VARCHAR},
       line_id = #{lineId,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       home_score = #{homeScore,jdbcType=INTEGER},
@@ -641,7 +641,7 @@
     <result column="league_Info_Id" jdbcType="VARCHAR" property="leagueInfoId" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
     <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
-    <result column="inttime" jdbcType="VARCHAR" property="inttime" />
+    <result column="intTime" jdbcType="VARCHAR" property="intTime" />
     <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="home_score" jdbcType="INTEGER" property="homeScore" />
@@ -652,7 +652,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, home_team, league_Info_Id, guest_team, match_time, inttime, line_id, status, home_score, 
+    id, home_team, league_Info_Id, guest_team, match_time, intTime, line_id, status, home_score, 
     guest_score, conncede, home_group, guest_group, create_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -667,12 +667,12 @@
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
     insert into sport_football_match (id, home_team, league_Info_Id, 
-      guest_team, match_time, inttime, 
+      guest_team, match_time, intTime, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time)
     values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=VARCHAR}, 
-      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{inttime,jdbcType=VARCHAR}, 
+      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{intTime,jdbcType=VARCHAR}, 
       #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
       #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
       #{guestGroup,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
@@ -695,8 +695,8 @@
       <if test="matchTime != null">
         match_time,
       </if>
-      <if test="inttime != null">
-        inttime,
+      <if test="intTime != null">
+        intTime,
       </if>
       <if test="lineId != null">
         line_id,
@@ -739,8 +739,8 @@
       <if test="matchTime != null">
         #{matchTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="inttime != null">
-        #{inttime,jdbcType=VARCHAR},
+      <if test="intTime != null">
+        #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
         #{lineId,jdbcType=VARCHAR},
@@ -783,8 +783,8 @@
       <if test="matchTime != null">
         match_time = #{matchTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="inttime != null">
-        inttime = #{inttime,jdbcType=VARCHAR},
+      <if test="intTime != null">
+        intTime = #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
         line_id = #{lineId,jdbcType=VARCHAR},
@@ -819,7 +819,7 @@
       league_Info_Id = #{leagueInfoId,jdbcType=VARCHAR},
       guest_team = #{guestTeam,jdbcType=VARCHAR},
       match_time = #{matchTime,jdbcType=TIMESTAMP},
-      inttime = #{inttime,jdbcType=VARCHAR},
+      intTime = #{intTime,jdbcType=VARCHAR},
       line_id = #{lineId,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       home_score = #{homeScore,jdbcType=INTEGER},
@@ -833,14 +833,14 @@
   
   <insert id="addSportFootballMatchs">
   	insert into sport_football_match (id, home_team, league_Info_Id, 
-      guest_team, match_time, inttime, 
+      guest_team, match_time, intTime, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time)
     values 
     <foreach collection="matchs" item="match" separator=","> 
 	   (#{match.id,jdbcType=INTEGER}, #{match.homeTeam,jdbcType=VARCHAR}, #{match.leagueInfoId,jdbcType=VARCHAR}, 
-      #{match.guestTeam,jdbcType=VARCHAR}, #{match.matchTime,jdbcType=TIMESTAMP}, #{match.inttime,jdbcType=VARCHAR}, 
+      #{match.guestTeam,jdbcType=VARCHAR}, #{match.matchTime,jdbcType=TIMESTAMP}, #{match.intTime,jdbcType=VARCHAR}, 
       #{match.lineId,jdbcType=VARCHAR}, #{match.status,jdbcType=INTEGER}, #{match.homeScore,jdbcType=INTEGER}, 
       #{match.guestScore,jdbcType=INTEGER}, #{match.conncede,jdbcType=INTEGER}, #{match.homeGroup,jdbcType=VARCHAR}, 
       #{match.guestGroup,jdbcType=VARCHAR}, #{match.createTime,jdbcType=TIMESTAMP})

@@ -10,5 +10,5 @@ import com.caipiao.lottery.entity.sport.vo.SportFootballMatchAward;
  *
  */
 public interface SportFootballDataService {
-	public void saveFootballData(List<SportFootballMatchAward> list);
+	public void saveOrUpdateFootballData(List<SportFootballMatchAward> list);
 }

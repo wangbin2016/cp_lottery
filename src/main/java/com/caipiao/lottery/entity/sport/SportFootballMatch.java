@@ -13,7 +13,7 @@ public class SportFootballMatch {
 
     private Date matchTime;
 
-    private String inttime;
+    private String intTime;
 
     private String lineId;
 
@@ -79,12 +79,12 @@ public class SportFootballMatch {
         this.matchTime = matchTime;
     }
 
-    public String getInttime() {
-        return inttime;
+    public String getIntTime() {
+        return intTime;
     }
 
     public void setInttime(String inttime) {
-        this.inttime = inttime == null ? null : inttime.trim();
+        this.intTime = inttime == null ? null : inttime.trim();
     }
 
     public String getLineId() {

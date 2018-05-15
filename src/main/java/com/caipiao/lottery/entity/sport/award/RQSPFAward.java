@@ -1,47 +1,64 @@
 package com.caipiao.lottery.entity.sport.award;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.annotation.JSONField;
+
 public class RQSPFAward {
 	double w;// win
 	double d;// draw
 	double l;// lost
-	int wStatus = 2;// sp状态->1：升，2不变,3下降
-	int dStatus = 2;// sp状态->1：升，2不变,3下降
-	int lStatus = 2;// sp状态->1：升，2不变,3下降
+	@JSONField(name="w_s")
+	int wStatus = 2;// sp状态->3：升，2不变,1下降
+	@JSONField(name="d_s")
+	int dStatus = 2;// sp状态->3：升，2不变,1下降
+	@JSONField(name="l_s")
+	int lStatus = 2;// sp状态->3：升，2不变,1下降
 
 	public RQSPFAward(double w, double d, double l) {
 		setW(w);
-		setD(w);
-		setL(w);
+		setD(d);
+		setL(l);
+	}
+	
+	public RQSPFAward(JSONArray arr) {
+		setW(getSP(arr,0));
+		setD(getSP(arr,1));
+		setL(getSP(arr,2));
+	}
+	
+	private double getSP(JSONArray spArr,int index) {
+		return spArr.getDouble(index);
 	}
 
 	public void setW(double w) {
-		if (this.w == 0) {
-			this.w = w;
-		} else if (this.w > w) {
-			wStatus = 3;
-		} else if (this.w < w) {
+		if (this.w > w) {
 			wStatus = 1;
+		} else if (this.w < w) {
+			wStatus = 3;
 		}
+		this.w = w;
 	}
 
 	public void setD(double d) {
-		if (this.w == 0) {
-			this.d = d;
-		} else if (this.d > d) {
-			wStatus = 3;
+		if (this.d > d) {
+			dStatus = 1;
 		} else if (this.d < d) {
-			wStatus = 1;
+			dStatus = 3;
 		}
+		this.d = d;
 	}
 
 	public void setL(double l) {
-		if (this.l == 0) {
-			this.l = l;
-		} else if (this.l > l) {
-			wStatus = 3;
+		if (this.l > l) {
+			lStatus = 1;			
 		} else if (this.l < l) {
-			wStatus = 1;
+			lStatus = 3;
 		}
 	}
 
+	@Override
+	public String toString() {
+		return JSONObject.toJSONString(this);
+	}
 }

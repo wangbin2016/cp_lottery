@@ -37,4 +37,15 @@ public class SportLeagueInfoServiceImpl implements SportLeagueInfoService {
 	public int updateByPrimaryKey(SportLeagueInfo record) {
 		return sportLeagueInfoMapper.updateByPrimaryKey(record);
 	}
+
+	@Override
+	public SportLeagueInfo selectByLikeName(String name) {
+		return sportLeagueInfoMapper.selectByLikeName(name);
+	}
+
+	@Override
+	public int selectTableId() {
+		Integer id = sportLeagueInfoMapper.selectTableId();
+		return id==null?1001:id;
+	}
 }

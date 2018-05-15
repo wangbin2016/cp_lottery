@@ -7,9 +7,9 @@ import com.alibaba.fastjson.JSONArray;
 public class SportFootballAward {
     private Integer id;
 
-    private Integer intTime;
+    private String intTime;
 
-    private Integer lineId;
+    private String lineId;
 
     private String bfAward;
 
@@ -37,7 +37,7 @@ public class SportFootballAward {
     
     public SportFootballAward() {}
 
-    public SportFootballAward(JSONArray arr,Integer intTime,Integer lineId) {
+    public SportFootballAward(JSONArray arr,String intTime,String lineId) {
     	bfAward = arr.getString(0);
     	bqcAward = arr.getString(1);
     	jqsAward = arr.getString(2);
@@ -54,19 +54,19 @@ public class SportFootballAward {
         this.id = id;
     }
 
-    public Integer getIntTime() {
+    public String getIntTime() {
         return intTime;
     }
 
-    public void setIntTime(Integer intTime) {
+    public void setIntTime(String intTime) {
         this.intTime = intTime;
     }
 
-    public Integer getLineId() {
+    public String getLineId() {
         return lineId;
     }
 
-    public void setLineId(Integer lineId) {
+    public void setLineId(String lineId) {
         this.lineId = lineId;
     }
 

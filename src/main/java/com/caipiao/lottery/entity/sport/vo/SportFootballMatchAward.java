@@ -4,24 +4,25 @@ import com.caipiao.lottery.entity.sport.SportFootballAward;
 import com.caipiao.lottery.entity.sport.SportFootballMatch;
 import com.caipiao.lottery.entity.sport.SportLeagueInfo;
 
+public class SportFootballMatchAward extends SportFootballMatch {
+	private SportFootballAward sportFootballAward;
 
-public class SportFootballMatchAward extends SportFootballMatch{
-	private SportFootballAward award;
-	private SportLeagueInfo leagueInfo;
-
-	public SportFootballAward getAward() {
-		return award;
+	private SportLeagueInfo sportLeagueInfo;
+	
+	public SportFootballAward getSportFootballAward() {
+		return sportFootballAward;
 	}
 
-	public void setAward(SportFootballAward award) {
-		this.award = award;
+	public void setSportFootballAward(SportFootballAward sportFootballAward) {
+		this.sportFootballAward = sportFootballAward;
 	}
 
-	public SportLeagueInfo getLeagueInfo() {
-		return leagueInfo;
+	public SportLeagueInfo getSportLeagueInfo() {
+		return sportLeagueInfo;
 	}
 
-	public void setLeagueInfo(SportLeagueInfo leagueInfo) {
-		this.leagueInfo = leagueInfo;
-	}
+	public void setSportLeagueInfo(SportLeagueInfo sportLeagueInfo) {
+		this.sportLeagueInfo = sportLeagueInfo;
+	}	
+
 }

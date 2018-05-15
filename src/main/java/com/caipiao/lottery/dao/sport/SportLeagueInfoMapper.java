@@ -19,4 +19,8 @@ public interface SportLeagueInfoMapper {
     int updateByPrimaryKey(SportLeagueInfo record);
     
     void addSportLeagueInfos(@Param("infos")List<SportLeagueInfo> infos);
+
+	SportLeagueInfo selectByLikeName(String name);
+
+	Integer selectTableId();
 }

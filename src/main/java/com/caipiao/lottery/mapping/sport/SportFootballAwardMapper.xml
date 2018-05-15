@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.caipiao.lottery.dao.sport.SportFootballAwardMapper">
   <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportFootballAward">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="int_time" jdbcType="INTEGER" property="intTime" />
-    <result column="line_id" jdbcType="INTEGER" property="lineId" />
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="int_time" jdbcType="VARCHAR" property="intTime" />
+    <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="bf_Award" jdbcType="VARCHAR" property="bfAward" />
     <result column="bqc_Award" jdbcType="VARCHAR" property="bqcAward" />
     <result column="jqs_Award" jdbcType="VARCHAR" property="jqsAward" />
@@ -22,15 +22,15 @@
     id, int_time, line_id, bf_Award, bqc_Award, jqs_Award, rqspf_Award, spf_Award, bf_status, 
     bqc_status, jqs_status, rqspf_status, spf_status, dg_status, create_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.VARCHAR" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from sport_football_award
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.VARCHAR">
     delete from sport_football_award
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
     insert into sport_football_award (id, int_time, line_id, 
@@ -39,7 +39,7 @@
       bqc_status, jqs_status, rqspf_status, 
       spf_status, dg_status, create_time
       )
-    values (#{id,jdbcType=INTEGER}, #{intTime,jdbcType=INTEGER}, #{lineId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=VARCHAR}, #{intTime,jdbcType=VARCHAR}, #{lineId,jdbcType=VARCHAR}, 
       #{bfAward,jdbcType=VARCHAR}, #{bqcAward,jdbcType=VARCHAR}, #{jqsAward,jdbcType=VARCHAR}, 
       #{rqspfAward,jdbcType=VARCHAR}, #{spfAward,jdbcType=VARCHAR}, #{bfStatus,jdbcType=VARCHAR}, 
       #{bqcStatus,jdbcType=VARCHAR}, #{jqsStatus,jdbcType=VARCHAR}, #{rqspfStatus,jdbcType=VARCHAR}, 
@@ -97,13 +97,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=VARCHAR},
       </if>
       <if test="intTime != null">
-        #{intTime,jdbcType=INTEGER},
+        #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
-        #{lineId,jdbcType=INTEGER},
+        #{lineId,jdbcType=VARCHAR},
       </if>
       <if test="bfAward != null">
         #{bfAward,jdbcType=VARCHAR},
@@ -147,10 +147,10 @@
     update sport_football_award
     <set>
       <if test="intTime != null">
-        int_time = #{intTime,jdbcType=INTEGER},
+        int_time = #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
-        line_id = #{lineId,jdbcType=INTEGER},
+        line_id = #{lineId,jdbcType=VARCHAR},
       </if>
       <if test="bfAward != null">
         bf_Award = #{bfAward,jdbcType=VARCHAR},
@@ -189,12 +189,12 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
     update sport_football_award
-    set int_time = #{intTime,jdbcType=INTEGER},
-      line_id = #{lineId,jdbcType=INTEGER},
+    set int_time = #{intTime,jdbcType=VARCHAR},
+      line_id = #{lineId,jdbcType=VARCHAR},
       bf_Award = #{bfAward,jdbcType=VARCHAR},
       bqc_Award = #{bqcAward,jdbcType=VARCHAR},
       jqs_Award = #{jqsAward,jdbcType=VARCHAR},
@@ -207,12 +207,12 @@
       spf_status = #{spfStatus,jdbcType=VARCHAR},
       dg_status = #{dgStatus,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportFootballAward">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="int_time" jdbcType="INTEGER" property="intTime" />
-    <result column="line_id" jdbcType="INTEGER" property="lineId" />
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="int_time" jdbcType="VARCHAR" property="intTime" />
+    <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="dg_award" jdbcType="VARCHAR" property="dgAward" />
     <result column="bf_Award" jdbcType="VARCHAR" property="bfAward" />
     <result column="bqc_Award" jdbcType="VARCHAR" property="bqcAward" />
@@ -231,15 +231,15 @@
     id, int_time, line_id, dg_award, bf_Award, bqc_Award, jqs_Award, rqspf_Award, spf_Award, 
     bf_status, bqc_status, jqs_status, rqspf_status, spf_status, dg_status, create_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.VARCHAR" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from sport_football_award
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.VARCHAR">
     delete from sport_football_award
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
     insert into sport_football_award (id, int_time, line_id, 
@@ -248,7 +248,7 @@
       bf_status, bqc_status, jqs_status, 
       rqspf_status, spf_status, dg_status, 
       create_time)
-    values (#{id,jdbcType=INTEGER}, #{intTime,jdbcType=INTEGER}, #{lineId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=VARCHAR}, #{intTime,jdbcType=VARCHAR}, #{lineId,jdbcType=VARCHAR}, 
       #{dgAward,jdbcType=VARCHAR}, #{bfAward,jdbcType=VARCHAR}, #{bqcAward,jdbcType=VARCHAR}, 
       #{jqsAward,jdbcType=VARCHAR}, #{rqspfAward,jdbcType=VARCHAR}, #{spfAward,jdbcType=VARCHAR}, 
       #{bfStatus,jdbcType=VARCHAR}, #{bqcStatus,jdbcType=VARCHAR}, #{jqsStatus,jdbcType=VARCHAR}, 
@@ -309,13 +309,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=VARCHAR},
       </if>
       <if test="intTime != null">
-        #{intTime,jdbcType=INTEGER},
+        #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
-        #{lineId,jdbcType=INTEGER},
+        #{lineId,jdbcType=VARCHAR},
       </if>
       <if test="dgAward != null">
         #{dgAward,jdbcType=VARCHAR},
@@ -362,10 +362,10 @@
     update sport_football_award
     <set>
       <if test="intTime != null">
-        int_time = #{intTime,jdbcType=INTEGER},
+        int_time = #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
-        line_id = #{lineId,jdbcType=INTEGER},
+        line_id = #{lineId,jdbcType=VARCHAR},
       </if>
       <if test="dgAward != null">
         dg_award = #{dgAward,jdbcType=VARCHAR},
@@ -407,12 +407,12 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
     update sport_football_award
-    set int_time = #{intTime,jdbcType=INTEGER},
-      line_id = #{lineId,jdbcType=INTEGER},
+    set int_time = #{intTime,jdbcType=VARCHAR},
+      line_id = #{lineId,jdbcType=VARCHAR},
       dg_award = #{dgAward,jdbcType=VARCHAR},
       bf_Award = #{bfAward,jdbcType=VARCHAR},
       bqc_Award = #{bqcAward,jdbcType=VARCHAR},
@@ -426,12 +426,12 @@
       spf_status = #{spfStatus,jdbcType=VARCHAR},
       dg_status = #{dgStatus,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.SportFootballAward">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="int_time" jdbcType="INTEGER" property="intTime" />
-    <result column="line_id" jdbcType="INTEGER" property="lineId" />
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="int_time" jdbcType="VARCHAR" property="intTime" />
+    <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="dg_award" jdbcType="VARCHAR" property="dgAward" />
     <result column="bf_Award" jdbcType="VARCHAR" property="bfAward" />
     <result column="bqc_Award" jdbcType="VARCHAR" property="bqcAward" />
@@ -450,15 +450,15 @@
     id, int_time, line_id, dg_award, bf_Award, bqc_Award, jqs_Award, rqspf_Award, spf_Award, 
     bf_status, bqc_status, jqs_status, rqspf_status, spf_status, dg_status, create_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.VARCHAR" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from sport_football_award
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.VARCHAR">
     delete from sport_football_award
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
     insert into sport_football_award (id, int_time, line_id, 
@@ -467,7 +467,7 @@
       bf_status, bqc_status, jqs_status, 
       rqspf_status, spf_status, dg_status, 
       create_time)
-    values (#{id,jdbcType=INTEGER}, #{intTime,jdbcType=INTEGER}, #{lineId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=VARCHAR}, #{intTime,jdbcType=VARCHAR}, #{lineId,jdbcType=VARCHAR}, 
       #{dgAward,jdbcType=VARCHAR}, #{bfAward,jdbcType=VARCHAR}, #{bqcAward,jdbcType=VARCHAR}, 
       #{jqsAward,jdbcType=VARCHAR}, #{rqspfAward,jdbcType=VARCHAR}, #{spfAward,jdbcType=VARCHAR}, 
       #{bfStatus,jdbcType=VARCHAR}, #{bqcStatus,jdbcType=VARCHAR}, #{jqsStatus,jdbcType=VARCHAR}, 
@@ -528,13 +528,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=VARCHAR},
       </if>
       <if test="intTime != null">
-        #{intTime,jdbcType=INTEGER},
+        #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
-        #{lineId,jdbcType=INTEGER},
+        #{lineId,jdbcType=VARCHAR},
       </if>
       <if test="dgAward != null">
         #{dgAward,jdbcType=VARCHAR},
@@ -581,10 +581,10 @@
     update sport_football_award
     <set>
       <if test="intTime != null">
-        int_time = #{intTime,jdbcType=INTEGER},
+        int_time = #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
-        line_id = #{lineId,jdbcType=INTEGER},
+        line_id = #{lineId,jdbcType=VARCHAR},
       </if>
       <if test="dgAward != null">
         dg_award = #{dgAward,jdbcType=VARCHAR},
@@ -626,12 +626,12 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
     update sport_football_award
-    set int_time = #{intTime,jdbcType=INTEGER},
-      line_id = #{lineId,jdbcType=INTEGER},
+    set int_time = #{intTime,jdbcType=VARCHAR},
+      line_id = #{lineId,jdbcType=VARCHAR},
       dg_award = #{dgAward,jdbcType=VARCHAR},
       bf_Award = #{bfAward,jdbcType=VARCHAR},
       bqc_Award = #{bqcAward,jdbcType=VARCHAR},
@@ -645,12 +645,12 @@
       spf_status = #{spfStatus,jdbcType=VARCHAR},
       dg_status = #{dgStatus,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <resultMap id="BaseResultMap" type="com.caipiao.lottery.entity.sport.sportFootballAward">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="int_time" jdbcType="INTEGER" property="intTime" />
-    <result column="line_id" jdbcType="INTEGER" property="lineId" />
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="int_time" jdbcType="VARCHAR" property="intTime" />
+    <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="dg_award" jdbcType="VARCHAR" property="dgAward" />
     <result column="bf_Award" jdbcType="VARCHAR" property="bfAward" />
     <result column="bqc_Award" jdbcType="VARCHAR" property="bqcAward" />
@@ -669,15 +669,15 @@
     id, int_time, line_id, dg_award, bf_Award, bqc_Award, jqs_Award, rqspf_Award, spf_Award, 
     bf_status, bqc_status, jqs_status, rqspf_status, spf_status, dg_status, create_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.VARCHAR" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from sport_football_award
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.VARCHAR">
     delete from sport_football_award
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.sportFootballAward">
     insert into sport_football_award (id, int_time, line_id, 
@@ -686,7 +686,7 @@
       bf_status, bqc_status, jqs_status, 
       rqspf_status, spf_status, dg_status, 
       create_time)
-    values (#{id,jdbcType=INTEGER}, #{intTime,jdbcType=INTEGER}, #{lineId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=VARCHAR}, #{intTime,jdbcType=VARCHAR}, #{lineId,jdbcType=VARCHAR}, 
       #{dgAward,jdbcType=VARCHAR}, #{bfAward,jdbcType=VARCHAR}, #{bqcAward,jdbcType=VARCHAR}, 
       #{jqsAward,jdbcType=VARCHAR}, #{rqspfAward,jdbcType=VARCHAR}, #{spfAward,jdbcType=VARCHAR}, 
       #{bfStatus,jdbcType=VARCHAR}, #{bqcStatus,jdbcType=VARCHAR}, #{jqsStatus,jdbcType=VARCHAR}, 
@@ -747,13 +747,13 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=VARCHAR},
       </if>
       <if test="intTime != null">
-        #{intTime,jdbcType=INTEGER},
+        #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
-        #{lineId,jdbcType=INTEGER},
+        #{lineId,jdbcType=VARCHAR},
       </if>
       <if test="dgAward != null">
         #{dgAward,jdbcType=VARCHAR},
@@ -800,10 +800,10 @@
     update sport_football_award
     <set>
       <if test="intTime != null">
-        int_time = #{intTime,jdbcType=INTEGER},
+        int_time = #{intTime,jdbcType=VARCHAR},
       </if>
       <if test="lineId != null">
-        line_id = #{lineId,jdbcType=INTEGER},
+        line_id = #{lineId,jdbcType=VARCHAR},
       </if>
       <if test="dgAward != null">
         dg_award = #{dgAward,jdbcType=VARCHAR},
@@ -845,12 +845,12 @@
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.sportFootballAward">
     update sport_football_award
-    set int_time = #{intTime,jdbcType=INTEGER},
-      line_id = #{lineId,jdbcType=INTEGER},
+    set int_time = #{intTime,jdbcType=VARCHAR},
+      line_id = #{lineId,jdbcType=VARCHAR},
       dg_award = #{dgAward,jdbcType=VARCHAR},
       bf_Award = #{bfAward,jdbcType=VARCHAR},
       bqc_Award = #{bqcAward,jdbcType=VARCHAR},
@@ -864,7 +864,7 @@
       spf_status = #{spfStatus,jdbcType=VARCHAR},
       dg_status = #{dgStatus,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
   </update>  
   <insert id="addSportFootballAwards">
   	insert into sport_football_award (id, int_time, line_id, 
@@ -875,7 +875,7 @@
       )
     values 
     <foreach collection="awards" item="award" separator=","> 
-	    (#{award.id,jdbcType=INTEGER}, #{award.intTime,jdbcType=INTEGER}, #{award.lineId,jdbcType=INTEGER}, 
+	    (#{award.id,jdbcType=VARCHAR}, #{award.intTime,jdbcType=VARCHAR}, #{award.lineId,jdbcType=VARCHAR}, 
 	      #{award.bfAward,jdbcType=VARCHAR}, #{award.bqcAward,jdbcType=VARCHAR}, #{award.jqsAward,jdbcType=VARCHAR}, 
 	      #{award.rqspfAward,jdbcType=VARCHAR}, #{award.spfAward,jdbcType=VARCHAR}, #{award.bfStatus,jdbcType=VARCHAR}, 
 	      #{award.bqcStatus,jdbcType=VARCHAR}, #{award.jqsStatus,jdbcType=VARCHAR}, #{award.rqspfStatus,jdbcType=VARCHAR}, 

@@ -75,4 +75,10 @@ public class SportLeagueInfo {
     public void setJcName(String jcName) {
         this.jcName = jcName == null ? null : jcName.trim();
     }
+
+	@Override
+	public String toString() {
+		return "SportLeagueInfo [id=" + id + ", name=" + name + ", shortName=" + shortName + ", color=" + color
+				+ ", picUrl=" + picUrl + ", dcName=" + dcName + ", jcName=" + jcName + "]";
+	}
 }
