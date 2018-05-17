@@ -3,6 +3,7 @@ package com.caipiao.lottery.dao.sport;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+
 import com.caipiao.lottery.entity.sport.SportLeagueInfo;
 
 public interface SportLeagueInfoMapper {
@@ -17,7 +18,7 @@ public interface SportLeagueInfoMapper {
     int updateByPrimaryKeySelective(SportLeagueInfo record);
 
     int updateByPrimaryKey(SportLeagueInfo record);
-    
+   
     void addSportLeagueInfos(@Param("infos")List<SportLeagueInfo> infos);
 
 	SportLeagueInfo selectByLikeName(String name);

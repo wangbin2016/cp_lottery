@@ -1,10 +1,5 @@
 package com.caipiao.lottery.entity.sport;
 
-/**
- * 竞彩足球联盟
- * @author WangBin
- *
- */
 public class SportLeagueInfo {
     private Integer id;
 
@@ -75,10 +70,4 @@ public class SportLeagueInfo {
     public void setJcName(String jcName) {
         this.jcName = jcName == null ? null : jcName.trim();
     }
-
-	@Override
-	public String toString() {
-		return "SportLeagueInfo [id=" + id + ", name=" + name + ", shortName=" + shortName + ", color=" + color
-				+ ", picUrl=" + picUrl + ", dcName=" + dcName + ", jcName=" + jcName + "]";
-	}
 }

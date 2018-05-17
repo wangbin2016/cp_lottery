@@ -20,4 +20,5 @@ public interface SportFootballAwardMapper {
     int updateByPrimaryKey(SportFootballAward record);
     
     void addSportFootballAwards(@Param("awards")List<SportFootballAward> awards);
+
 }

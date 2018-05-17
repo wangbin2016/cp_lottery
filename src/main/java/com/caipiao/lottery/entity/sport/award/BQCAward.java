@@ -4,17 +4,17 @@ import com.alibaba.fastjson.JSONArray;
 
 public class BQCAward {
 	public BQCAward(JSONArray bqcArr) {
-		ww = bqcArr.getDouble(0);
-		dw = bqcArr.getDouble(1);
-		lw = bqcArr.getDouble(2);
+		ww = bqcArr.getDouble(0).doubleValue();
+		dw = bqcArr.getDouble(1).doubleValue();
+		lw = bqcArr.getDouble(2).doubleValue();
 		
-		wd = bqcArr.getDouble(3);
-		dd = bqcArr.getDouble(4);
-		ld = bqcArr.getDouble(5);
+		wd = bqcArr.getDouble(3).doubleValue();
+		dd = bqcArr.getDouble(4).doubleValue();
+		ld = bqcArr.getDouble(5).doubleValue();
 		
-		wl = bqcArr.getDouble(6);
-		dl = bqcArr.getDouble(7);
-		ll = bqcArr.getDouble(8);
+		wl = bqcArr.getDouble(6).doubleValue();
+		dl = bqcArr.getDouble(7).doubleValue();
+		ll = bqcArr.getDouble(8).doubleValue();
 	}
 	double ww;//win win
 	double dw;//draw win;

@@ -78,16 +78,16 @@ public class SportFootballMatch {
     public void setMatchTime(Date matchTime) {
         this.matchTime = matchTime;
     }
-
+    
     public String getIntTime() {
-        return intTime;
-    }
+		return intTime;
+	}
 
-    public void setInttime(String inttime) {
-        this.intTime = inttime == null ? null : inttime.trim();
-    }
+	public void setIntTime(String intTime) {
+		this.intTime = intTime;
+	}
 
-    public String getLineId() {
+	public String getLineId() {
         return lineId;
     }
 

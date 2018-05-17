@@ -2,8 +2,6 @@ package com.caipiao.lottery.entity.sport;
 
 import java.util.Date;
 
-import com.alibaba.fastjson.JSONArray;
-
 public class SportFootballAward {
     private Integer id;
 
@@ -19,7 +17,7 @@ public class SportFootballAward {
 
     private String rqspfAward;
 
-    private String spfAward;//1：在售，2：停售
+    private String spfAward;
 
     private String bfStatus;
 
@@ -34,18 +32,7 @@ public class SportFootballAward {
     private String dgStatus;
 
     private Date createTime;
-    
-    public SportFootballAward() {}
 
-    public SportFootballAward(JSONArray arr,String intTime,String lineId) {
-    	bfAward = arr.getString(0);
-    	bqcAward = arr.getString(1);
-    	jqsAward = arr.getString(2);
-    	rqspfAward = arr.getString(3);
-    	spfAward = arr.getString(4);
-    	this.intTime = intTime;
-    	this.lineId = lineId;
-    }
     public Integer getId() {
         return id;
     }
@@ -59,7 +46,7 @@ public class SportFootballAward {
     }
 
     public void setIntTime(String intTime) {
-        this.intTime = intTime;
+        this.intTime = intTime == null ? null : intTime.trim();
     }
 
     public String getLineId() {
@@ -67,7 +54,7 @@ public class SportFootballAward {
     }
 
     public void setLineId(String lineId) {
-        this.lineId = lineId;
+        this.lineId = lineId == null ? null : lineId.trim();
     }
 
     public String getBfAward() {
@@ -165,6 +152,4 @@ public class SportFootballAward {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
-    
-    
 }

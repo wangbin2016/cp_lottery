@@ -7,7 +7,7 @@ import com.caipiao.lottery.dao.sport.SportFootballAwardMapper;
 import com.caipiao.lottery.entity.sport.SportFootballAward;
 import com.caipiao.lottery.service.sport.SportFootballAwardService;
 
-@Service("sportFootballAwardService")
+@Service()
 public class SportFootballAwardServiceImpl implements SportFootballAwardService {
 	@Autowired
 	private SportFootballAwardMapper sportFootballAwardMapper;

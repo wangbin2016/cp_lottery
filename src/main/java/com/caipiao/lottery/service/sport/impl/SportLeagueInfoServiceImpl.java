@@ -1,12 +1,14 @@
 package com.caipiao.lottery.service.sport.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.caipiao.lottery.dao.sport.SportLeagueInfoMapper;
 import com.caipiao.lottery.entity.sport.SportLeagueInfo;
 import com.caipiao.lottery.service.sport.SportLeagueInfoService;
-@Service("sportLeagueInfoService")
-public class SportLeagueInfoServiceImpl implements SportLeagueInfoService {
+@Service("sportLeagueInfoService_")
+public class SportLeagueInfoServiceImpl implements SportLeagueInfoService {	
+	@Autowired
 	private SportLeagueInfoMapper sportLeagueInfoMapper;
 	@Override
 	public int deleteByPrimaryKey(Integer id) {
@@ -25,6 +27,7 @@ public class SportLeagueInfoServiceImpl implements SportLeagueInfoService {
 
 	@Override
 	public SportLeagueInfo selectByPrimaryKey(Integer id) {
+		System.out.println("id::"+id);
 		return sportLeagueInfoMapper.selectByPrimaryKey(id);
 	}
 

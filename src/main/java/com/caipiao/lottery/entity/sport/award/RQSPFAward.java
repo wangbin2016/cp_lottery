@@ -28,7 +28,7 @@ public class RQSPFAward {
 	}
 	
 	private double getSP(JSONArray spArr,int index) {
-		return spArr.getDouble(index);
+		return spArr.getDouble(index).doubleValue();
 	}
 
 	public void setW(double w) {

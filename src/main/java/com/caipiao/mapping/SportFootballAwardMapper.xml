@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.caipiao.lottery.dao.sport.SportFootballAwardMapper">
+  <resultMap id="SportFootballAwardMap" type="com.caipiao.lottery.entity.sport.SportFootballAward">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="int_time" jdbcType="VARCHAR" property="intTime" />
+    <result column="line_id" jdbcType="VARCHAR" property="lineId" />
+    <result column="bf_Award" jdbcType="VARCHAR" property="bfAward" />
+    <result column="bqc_Award" jdbcType="VARCHAR" property="bqcAward" />
+    <result column="jqs_Award" jdbcType="VARCHAR" property="jqsAward" />
+    <result column="rqspf_Award" jdbcType="VARCHAR" property="rqspfAward" />
+    <result column="spf_Award" jdbcType="VARCHAR" property="spfAward" />
+    <result column="bf_status" jdbcType="VARCHAR" property="bfStatus" />
+    <result column="bqc_status" jdbcType="VARCHAR" property="bqcStatus" />
+    <result column="jqs_status" jdbcType="VARCHAR" property="jqsStatus" />
+    <result column="rqspf_status" jdbcType="VARCHAR" property="rqspfStatus" />
+    <result column="spf_status" jdbcType="VARCHAR" property="spfStatus" />
+    <result column="dg_status" jdbcType="VARCHAR" property="dgStatus" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, int_time, line_id, bf_Award, bqc_Award, jqs_Award, rqspf_Award, spf_Award, bf_status, 
+    bqc_status, jqs_status, rqspf_status, spf_status, dg_status, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="SportFootballAwardMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sport_football_award
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sport_football_award
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
+    insert into sport_football_award (id, int_time, line_id, 
+      bf_Award, bqc_Award, jqs_Award, 
+      rqspf_Award, spf_Award, bf_status, 
+      bqc_status, jqs_status, rqspf_status, 
+      spf_status, dg_status, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{intTime,jdbcType=VARCHAR}, #{lineId,jdbcType=VARCHAR}, 
+      #{bfAward,jdbcType=VARCHAR}, #{bqcAward,jdbcType=VARCHAR}, #{jqsAward,jdbcType=VARCHAR}, 
+      #{rqspfAward,jdbcType=VARCHAR}, #{spfAward,jdbcType=VARCHAR}, #{bfStatus,jdbcType=VARCHAR}, 
+      #{bqcStatus,jdbcType=VARCHAR}, #{jqsStatus,jdbcType=VARCHAR}, #{rqspfStatus,jdbcType=VARCHAR}, 
+      #{spfStatus,jdbcType=VARCHAR}, #{dgStatus,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
+    insert into sport_football_award
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="intTime != null">
+        int_time,
+      </if>
+      <if test="lineId != null">
+        line_id,
+      </if>
+      <if test="bfAward != null">
+        bf_Award,
+      </if>
+      <if test="bqcAward != null">
+        bqc_Award,
+      </if>
+      <if test="jqsAward != null">
+        jqs_Award,
+      </if>
+      <if test="rqspfAward != null">
+        rqspf_Award,
+      </if>
+      <if test="spfAward != null">
+        spf_Award,
+      </if>
+      <if test="bfStatus != null">
+        bf_status,
+      </if>
+      <if test="bqcStatus != null">
+        bqc_status,
+      </if>
+      <if test="jqsStatus != null">
+        jqs_status,
+      </if>
+      <if test="rqspfStatus != null">
+        rqspf_status,
+      </if>
+      <if test="spfStatus != null">
+        spf_status,
+      </if>
+      <if test="dgStatus != null">
+        dg_status,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="intTime != null">
+        #{intTime,jdbcType=VARCHAR},
+      </if>
+      <if test="lineId != null">
+        #{lineId,jdbcType=VARCHAR},
+      </if>
+      <if test="bfAward != null">
+        #{bfAward,jdbcType=VARCHAR},
+      </if>
+      <if test="bqcAward != null">
+        #{bqcAward,jdbcType=VARCHAR},
+      </if>
+      <if test="jqsAward != null">
+        #{jqsAward,jdbcType=VARCHAR},
+      </if>
+      <if test="rqspfAward != null">
+        #{rqspfAward,jdbcType=VARCHAR},
+      </if>
+      <if test="spfAward != null">
+        #{spfAward,jdbcType=VARCHAR},
+      </if>
+      <if test="bfStatus != null">
+        #{bfStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="bqcStatus != null">
+        #{bqcStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="jqsStatus != null">
+        #{jqsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="rqspfStatus != null">
+        #{rqspfStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="spfStatus != null">
+        #{spfStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="dgStatus != null">
+        #{dgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
+    update sport_football_award
+    <set>
+      <if test="intTime != null">
+        int_time = #{intTime,jdbcType=VARCHAR},
+      </if>
+      <if test="lineId != null">
+        line_id = #{lineId,jdbcType=VARCHAR},
+      </if>
+      <if test="bfAward != null">
+        bf_Award = #{bfAward,jdbcType=VARCHAR},
+      </if>
+      <if test="bqcAward != null">
+        bqc_Award = #{bqcAward,jdbcType=VARCHAR},
+      </if>
+      <if test="jqsAward != null">
+        jqs_Award = #{jqsAward,jdbcType=VARCHAR},
+      </if>
+      <if test="rqspfAward != null">
+        rqspf_Award = #{rqspfAward,jdbcType=VARCHAR},
+      </if>
+      <if test="spfAward != null">
+        spf_Award = #{spfAward,jdbcType=VARCHAR},
+      </if>
+      <if test="bfStatus != null">
+        bf_status = #{bfStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="bqcStatus != null">
+        bqc_status = #{bqcStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="jqsStatus != null">
+        jqs_status = #{jqsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="rqspfStatus != null">
+        rqspf_status = #{rqspfStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="spfStatus != null">
+        spf_status = #{spfStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="dgStatus != null">
+        dg_status = #{dgStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.caipiao.lottery.entity.sport.SportFootballAward">
+    update sport_football_award
+    set int_time = #{intTime,jdbcType=VARCHAR},
+      line_id = #{lineId,jdbcType=VARCHAR},
+      bf_Award = #{bfAward,jdbcType=VARCHAR},
+      bqc_Award = #{bqcAward,jdbcType=VARCHAR},
+      jqs_Award = #{jqsAward,jdbcType=VARCHAR},
+      rqspf_Award = #{rqspfAward,jdbcType=VARCHAR},
+      spf_Award = #{spfAward,jdbcType=VARCHAR},
+      bf_status = #{bfStatus,jdbcType=VARCHAR},
+      bqc_status = #{bqcStatus,jdbcType=VARCHAR},
+      jqs_status = #{jqsStatus,jdbcType=VARCHAR},
+      rqspf_status = #{rqspfStatus,jdbcType=VARCHAR},
+      spf_status = #{spfStatus,jdbcType=VARCHAR},
+      dg_status = #{dgStatus,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <insert id="addSportFootballAwards">
+  	insert into sport_football_award (id, int_time, line_id, 
+      bf_Award, bqc_Award, jqs_Award, 
+      rqspf_Award, spf_Award, bf_status, 
+      bqc_status, jqs_status, rqspf_status, 
+      spf_status, dg_status, create_time
+      )
+    values 
+    <foreach collection="awards" item="award" separator=","> 
+	    (#{award.id,jdbcType=VARCHAR}, #{award.intTime,jdbcType=VARCHAR}, #{award.lineId,jdbcType=VARCHAR}, 
+	      #{award.bfAward,jdbcType=VARCHAR}, #{award.bqcAward,jdbcType=VARCHAR}, #{award.jqsAward,jdbcType=VARCHAR}, 
+	      #{award.rqspfAward,jdbcType=VARCHAR}, #{award.spfAward,jdbcType=VARCHAR}, #{award.bfStatus,jdbcType=VARCHAR}, 
+	      #{award.bqcStatus,jdbcType=VARCHAR}, #{award.jqsStatus,jdbcType=VARCHAR}, #{award.rqspfStatus,jdbcType=VARCHAR}, 
+	      #{award.spfStatus,jdbcType=VARCHAR}, #{award.dgStatus,jdbcType=VARCHAR}, #{award.createTime,jdbcType=TIMESTAMP}
+	      )
+     </foreach>
+  </insert> 
+</mapper>

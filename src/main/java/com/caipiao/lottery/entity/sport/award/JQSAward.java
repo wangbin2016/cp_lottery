@@ -4,14 +4,14 @@ import com.alibaba.fastjson.JSONArray;
 
 public class JQSAward {
 	public JQSAward(JSONArray jqsArr) {
-		j0 = jqsArr.getDouble(0);
-		j1 = jqsArr.getDouble(1);
-		j2 = jqsArr.getDouble(3);
-		j3 = jqsArr.getDouble(4);
-		j4 = jqsArr.getDouble(5);
-		j5 = jqsArr.getDouble(6);
-		j6 = jqsArr.getDouble(7);
-		j7 = jqsArr.getDouble(8);
+		j0 = jqsArr.getDouble(0).doubleValue();
+		j1 = jqsArr.getDouble(1).doubleValue();
+		j2 = jqsArr.getDouble(3).doubleValue();
+		j3 = jqsArr.getDouble(4).doubleValue();
+		j4 = jqsArr.getDouble(5).doubleValue();
+		j5 = jqsArr.getDouble(6).doubleValue();
+		j6 = jqsArr.getDouble(7).doubleValue();
+		j7 = jqsArr.getDouble(8).doubleValue();
 	}
 	double j0;
 	double j1;
