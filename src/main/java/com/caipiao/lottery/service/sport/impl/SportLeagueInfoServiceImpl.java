@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.caipiao.lottery.dao.sport.SportLeagueInfoMapper;
 import com.caipiao.lottery.entity.sport.SportLeagueInfo;
 import com.caipiao.lottery.service.sport.SportLeagueInfoService;
-@Service("sportLeagueInfoService_")
+@Service()
 public class SportLeagueInfoServiceImpl implements SportLeagueInfoService {	
 	@Autowired
 	private SportLeagueInfoMapper sportLeagueInfoMapper;
