@@ -1,9 +1,15 @@
 package com.caipiao.lottery.entity.sport.award;
 
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 
-public class BFAward extends BaseAward{
+import lombok.Data;
+
+import static com.caipiao.lottery.entity.sport.award.AwardUtils.getSP;
+
+@Data
+public class BFAward{
+	
+	public BFAward() {}
 	
 	public BFAward(JSONArray spfArr) {
 		if(spfArr.size()<33) {
@@ -45,44 +51,44 @@ public class BFAward extends BaseAward{
 		b25 = getSP(spfArr,31);
 		bl = getSP(spfArr,32);
 	}
-	double b10;
-	double b20;
-	double b21;
-	double b30;
-	double b31;
-	double b32;
-	double b40;
-	double b41;
-	double b42;
-	double b43;
-	double b50;
-	double b51;
-	double b52;
-	double bw;//胜其它
+	private double b10;
+	private double b20;
+	private double b21;
+	private double b30;
+	private double b31;
+	private double b32;
+	private double b40;
+	private double b41;
+	private double b42;
+	private double b43;
+	private double b50;
+	private double b51;
+	private double b52;
+	private double bw;//胜其它
 	
-	double b00;
-	double b11;
-	double b22;
-	double b33;
-	double bd;//平其它
+	private double b00;
+	private double b11;
+	private double b22;
+	private double b33;
+	private double bd;//平其它
 	
-	double b01;
-	double b02;
-	double b12;
-	double b03;
-	double b13;
-	double b23;
-	double b04;
-	double b14;
-	double b24;
-	double b34;
-	double b05;
-	double b15;
-	double b25;
-	double bl;//负其它
+	private double b01;
+	private double b02;
+	private double b12;
+	private double b03;
+	private double b13;
+	private double b23;
+	private double b04;
+	private double b14;
+	private double b24;
+	private double b34;
+	private double b05;
+	private double b15;
+	private double b25;
+	private double bl;//负其它
 	
 	@Override
 	public String toString() {
-		return JSONObject.toJSONString(this);
+		return AwardUtils.toJsonString(this);
 	}
 }

@@ -2,7 +2,11 @@ package com.caipiao.lottery.entity.sport.award;
 
 import com.alibaba.fastjson.JSONArray;
 
-public class BQCAward extends BaseAward{
+import lombok.Data;
+
+import static com.caipiao.lottery.entity.sport.award.AwardUtils.getSP;
+@Data
+public class BQCAward{
 	public BQCAward(JSONArray bqcArr) {
 		if(bqcArr.size() < 9) {
 			return;
@@ -31,5 +35,8 @@ public class BQCAward extends BaseAward{
 	double dl;//draw lost
 	double ll;//lost lost
 	
-	
+	@Override
+	public String toString() {
+		return AwardUtils.toJsonString(this);
+	}
 }

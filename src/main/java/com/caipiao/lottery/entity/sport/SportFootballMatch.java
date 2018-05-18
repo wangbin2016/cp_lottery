@@ -182,4 +182,14 @@ public class SportFootballMatch {
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
+
+	@Override
+	public String toString() {
+		return "SportFootballMatch [id=" + id + ", homeTeam=" + homeTeam + ", leagueInfoId=" + leagueInfoId
+				+ ", guestTeam=" + guestTeam + ", matchTime=" + matchTime + ", intTime=" + intTime + ", lineId="
+				+ lineId + ", status=" + status + ", homeScore=" + homeScore + ", guestScore=" + guestScore
+				+ ", conncede=" + conncede + ", homeGroup=" + homeGroup + ", guestGroup=" + guestGroup + ", createTime="
+				+ createTime + ", homeSupport=" + homeSupport + ", drawSupport=" + drawSupport + ", guestSupport="
+				+ guestSupport + ", createDate=" + createDate + "]";
+	}
 }

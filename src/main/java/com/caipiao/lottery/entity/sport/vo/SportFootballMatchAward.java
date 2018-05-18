@@ -23,6 +23,13 @@ public class SportFootballMatchAward extends SportFootballMatch {
 
 	public void setSportLeagueInfo(SportLeagueInfo sportLeagueInfo) {
 		this.sportLeagueInfo = sportLeagueInfo;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "SportFootballMatchAward [sportFootballAward=" + sportFootballAward + ", sportLeagueInfo="
+				+ sportLeagueInfo + "]"+super.toString();
+	}
+	
 
 }

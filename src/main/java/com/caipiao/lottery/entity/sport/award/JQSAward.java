@@ -1,10 +1,13 @@
 package com.caipiao.lottery.entity.sport.award;
 
 import com.alibaba.fastjson.JSONArray;
+import lombok.Data;
 
-public class JQSAward extends BaseAward{
+import static com.caipiao.lottery.entity.sport.award.AwardUtils.getSP;
+@Data
+public class JQSAward{
 	public JQSAward(JSONArray jqsArr) {
-		if(jqsArr.size() < 9) {
+		if(jqsArr.size() < 8) {
 			return;
 		}
 		
@@ -25,4 +28,9 @@ public class JQSAward extends BaseAward{
 	double j5;
 	double j6;
 	double j7;
+	
+	@Override
+	public String toString() {
+		return AwardUtils.toJsonString(this);
+	}
 }

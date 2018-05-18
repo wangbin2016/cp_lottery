@@ -1,13 +1,17 @@
 package com.caipiao.lottery.entity.sport.award;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 
-public class RQSPFAward extends BaseAward{
-	double w;// win
-	double d;// draw
-	double l;// lost
+import lombok.Data;
+
+import static com.caipiao.lottery.entity.sport.award.AwardUtils.getSP;
+@Data
+public class RQSPFAward  {
+	private double w;// win
+	private double d;// draw
+	private double l;// lost
 	@JSONField(name="w_s")
 	int wStatus = 2;// sp状态->3：升，2不变,1下降
 	@JSONField(name="d_s")
@@ -54,10 +58,11 @@ public class RQSPFAward extends BaseAward{
 		} else if (this.l < l) {
 			lStatus = 3;
 		}
+		this.l = l;
 	}
 
 	@Override
 	public String toString() {
-		return JSONObject.toJSONString(this);
+		return AwardUtils.toJsonString(this);
 	}
 }

@@ -152,4 +152,13 @@ public class SportFootballAward {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+	@Override
+	public String toString() {
+		return "SportFootballAward [id=" + id + ", intTime=" + intTime + ", lineId=" + lineId + ", bfAward=" + bfAward
+				+ ", bqcAward=" + bqcAward + ", jqsAward=" + jqsAward + ", rqspfAward=" + rqspfAward + ", spfAward="
+				+ spfAward + ", bfStatus=" + bfStatus + ", bqcStatus=" + bqcStatus + ", jqsStatus=" + jqsStatus
+				+ ", rqspfStatus=" + rqspfStatus + ", spfStatus=" + spfStatus + ", dgStatus=" + dgStatus
+				+ ", createTime=" + createTime + "]";
+	}
 }
