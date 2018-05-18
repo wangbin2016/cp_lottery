@@ -1,4 +1,4 @@
-package com.caipiao.lottery.service.sport.impl;
+package com.caipiao.lottery.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import com.caipiao.lottery.dao.sport.SportLeagueInfoMapper;
 import com.caipiao.lottery.entity.sport.SportFootballAward;
 import com.caipiao.lottery.entity.sport.SportFootballMatch;
 import com.caipiao.lottery.entity.sport.vo.SportFootballMatchAward;
-import com.caipiao.lottery.service.sport.SportFootballDataService;
+import com.caipiao.lottery.service.SportFootballDataService;
 
 @Service()
 public class SportFootballDataServiceImpl implements SportFootballDataService {

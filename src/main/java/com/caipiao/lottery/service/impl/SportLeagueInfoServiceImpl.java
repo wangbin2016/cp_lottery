@@ -1,11 +1,11 @@
-package com.caipiao.lottery.service.sport.impl;
+package com.caipiao.lottery.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.caipiao.lottery.dao.sport.SportLeagueInfoMapper;
 import com.caipiao.lottery.entity.sport.SportLeagueInfo;
-import com.caipiao.lottery.service.sport.SportLeagueInfoService;
+import com.caipiao.lottery.service.SportLeagueInfoService;
 @Service()
 public class SportLeagueInfoServiceImpl implements SportLeagueInfoService {	
 	@Autowired
@@ -49,6 +49,6 @@ public class SportLeagueInfoServiceImpl implements SportLeagueInfoService {
 	@Override
 	public int selectTableId() {
 		Integer id = sportLeagueInfoMapper.selectTableId();
-		return id==null?1001:id;
+		return id==null?1001:id+1;
 	}
 }

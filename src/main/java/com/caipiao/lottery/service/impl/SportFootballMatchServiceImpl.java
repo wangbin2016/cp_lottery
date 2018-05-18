@@ -1,11 +1,11 @@
-package com.caipiao.lottery.service.sport.impl;
+package com.caipiao.lottery.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.caipiao.lottery.dao.sport.SportFootballMatchMapper;
 import com.caipiao.lottery.entity.sport.SportFootballMatch;
-import com.caipiao.lottery.service.sport.SportFootballMatchService;
+import com.caipiao.lottery.service.SportFootballMatchService;
 
 @Service()
 public class SportFootballMatchServiceImpl implements SportFootballMatchService {

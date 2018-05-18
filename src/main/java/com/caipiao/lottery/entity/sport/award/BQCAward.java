@@ -2,19 +2,22 @@ package com.caipiao.lottery.entity.sport.award;
 
 import com.alibaba.fastjson.JSONArray;
 
-public class BQCAward {
+public class BQCAward extends BaseAward{
 	public BQCAward(JSONArray bqcArr) {
-		ww = bqcArr.getDouble(0).doubleValue();
-		dw = bqcArr.getDouble(1).doubleValue();
-		lw = bqcArr.getDouble(2).doubleValue();
+		if(bqcArr.size() < 9) {
+			return;
+		}
+		ww = getSP(bqcArr,0);
+		dw = getSP(bqcArr,1);
+		lw = getSP(bqcArr,2);
 		
-		wd = bqcArr.getDouble(3).doubleValue();
-		dd = bqcArr.getDouble(4).doubleValue();
-		ld = bqcArr.getDouble(5).doubleValue();
+		wd = getSP(bqcArr,3);
+		dd = getSP(bqcArr,4);
+		ld = getSP(bqcArr,5);
 		
-		wl = bqcArr.getDouble(6).doubleValue();
-		dl = bqcArr.getDouble(7).doubleValue();
-		ll = bqcArr.getDouble(8).doubleValue();
+		wl = getSP(bqcArr,6);
+		dl = getSP(bqcArr,7);
+		ll = getSP(bqcArr,8);
 	}
 	double ww;//win win
 	double dw;//draw win;

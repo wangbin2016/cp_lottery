@@ -1,4 +1,4 @@
-package com.caipiao.lottery.service.sport;
+package com.caipiao.lottery.service;
 
 import java.util.List;
 

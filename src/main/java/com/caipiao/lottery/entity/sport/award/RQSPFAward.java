@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 
-public class RQSPFAward {
+public class RQSPFAward extends BaseAward{
 	double w;// win
 	double d;// draw
 	double l;// lost
@@ -22,13 +22,12 @@ public class RQSPFAward {
 	}
 	
 	public RQSPFAward(JSONArray arr) {
+		if(arr.size()<3) {
+			return;
+		}
 		setW(getSP(arr,0));
 		setD(getSP(arr,1));
 		setL(getSP(arr,2));
-	}
-	
-	private double getSP(JSONArray spArr,int index) {
-		return spArr.getDouble(index).doubleValue();
 	}
 
 	public void setW(double w) {

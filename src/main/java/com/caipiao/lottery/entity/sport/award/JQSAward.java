@@ -2,16 +2,20 @@ package com.caipiao.lottery.entity.sport.award;
 
 import com.alibaba.fastjson.JSONArray;
 
-public class JQSAward {
+public class JQSAward extends BaseAward{
 	public JQSAward(JSONArray jqsArr) {
-		j0 = jqsArr.getDouble(0).doubleValue();
-		j1 = jqsArr.getDouble(1).doubleValue();
-		j2 = jqsArr.getDouble(3).doubleValue();
-		j3 = jqsArr.getDouble(4).doubleValue();
-		j4 = jqsArr.getDouble(5).doubleValue();
-		j5 = jqsArr.getDouble(6).doubleValue();
-		j6 = jqsArr.getDouble(7).doubleValue();
-		j7 = jqsArr.getDouble(8).doubleValue();
+		if(jqsArr.size() < 9) {
+			return;
+		}
+		
+		j0 = getSP(jqsArr,0);
+		j1 = getSP(jqsArr,1);
+		j2 = getSP(jqsArr,3);
+		j3 = getSP(jqsArr,4);
+		j4 = getSP(jqsArr,5);
+		j5 = getSP(jqsArr,6);
+		j6 = getSP(jqsArr,7);
+		j7 = getSP(jqsArr,8);
 	}
 	double j0;
 	double j1;

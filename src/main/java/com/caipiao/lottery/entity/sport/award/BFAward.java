@@ -3,44 +3,47 @@ package com.caipiao.lottery.entity.sport.award;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-public class BFAward {
+public class BFAward extends BaseAward{
 	
 	public BFAward(JSONArray spfArr) {
-		b10 = spfArr.getDouble(0).doubleValue();
-		b20 = spfArr.getDouble(1).doubleValue();
-		b21 = spfArr.getDouble(2).doubleValue();
-		b30 = spfArr.getDouble(3).doubleValue();
-		b31 = spfArr.getDouble(4).doubleValue();
-		b32 = spfArr.getDouble(5).doubleValue();
-		b40 = spfArr.getDouble(6).doubleValue();
-		b41 = spfArr.getDouble(7).doubleValue();
-		b42 = spfArr.getDouble(8).doubleValue();
-		b43 = spfArr.getDouble(9).doubleValue();		
-		b50 = spfArr.getDouble(10).doubleValue();
-		b51 = spfArr.getDouble(11).doubleValue();
-		b52 = spfArr.getDouble(12).doubleValue();
-		bw = spfArr.getDouble(13).doubleValue();
+		if(spfArr.size()<33) {
+			return;
+		}
+		b10 = getSP(spfArr,0);
+		b20 = getSP(spfArr,1);
+		b21 = getSP(spfArr,2);
+		b30 = getSP(spfArr,3);
+		b31 = getSP(spfArr,4);
+		b32 = getSP(spfArr,5);
+		b40 = getSP(spfArr,6);
+		b41 = getSP(spfArr,7);
+		b42 = getSP(spfArr,8);
+		b43 = getSP(spfArr,9);		
+		b50 = getSP(spfArr,10);
+		b51 = getSP(spfArr,11);
+		b52 = getSP(spfArr,12);
+		bw = getSP(spfArr,13);
 		
-		b00 = spfArr.getDouble(14).doubleValue();
-		b11 = spfArr.getDouble(15).doubleValue();
-		b22 = spfArr.getDouble(16).doubleValue();
-		b33 = spfArr.getDouble(17).doubleValue();
-		bd = spfArr.getDouble(18).doubleValue();
+		b00 = getSP(spfArr,14);
+		b11 = getSP(spfArr,15);
+		b22 = getSP(spfArr,16);
+		b33 = getSP(spfArr,17);
+		bd = getSP(spfArr,18);
 		
-		b01 = spfArr.getDouble(19).doubleValue();		
-		b02 = spfArr.getDouble(20).doubleValue();
-		b12 = spfArr.getDouble(21).doubleValue();
-		b03 = spfArr.getDouble(22).doubleValue();
-		b13 = spfArr.getDouble(23).doubleValue();
-		b23 = spfArr.getDouble(24).doubleValue();
-		b04 = spfArr.getDouble(25).doubleValue();
-		b14 = spfArr.getDouble(26).doubleValue();
-		b24 = spfArr.getDouble(27).doubleValue();
-		b34 = spfArr.getDouble(28).doubleValue();
-		b05 = spfArr.getDouble(29).doubleValue();
-		b15 = spfArr.getDouble(30).doubleValue();
-		b25 = spfArr.getDouble(31).doubleValue();
-		bl = spfArr.getDouble(32).doubleValue();
+		b01 = getSP(spfArr,19);		
+		b02 = getSP(spfArr,20);
+		b12 = getSP(spfArr,21);
+		b03 = getSP(spfArr,22);
+		b13 = getSP(spfArr,23);
+		b23 = getSP(spfArr,24);
+		b04 = getSP(spfArr,25);
+		b14 = getSP(spfArr,26);
+		b24 = getSP(spfArr,27);
+		b34 = getSP(spfArr,28);
+		b05 = getSP(spfArr,29);
+		b15 = getSP(spfArr,30);
+		b25 = getSP(spfArr,31);
+		bl = getSP(spfArr,32);
 	}
 	double b10;
 	double b20;
