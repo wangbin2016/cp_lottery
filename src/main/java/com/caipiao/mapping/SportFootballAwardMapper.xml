@@ -226,4 +226,23 @@
 	      )
      </foreach>
   </insert> 
+  
+  <select id="selectBySearch" parameterType="com.caipiao.lottery.entity.sport.vo.SportFootballMatchAwardSearch" resultMap="SportFootballAwardMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from sport_football_award
+    where 1=1
+    <if test="intTime != null">
+       and int_time = #{intTime}
+    </if>
+    <if test="lineId != null">
+       and line_id = #{lineId}
+    </if>
+    <if test="greaterIntime != null">
+       and int_time = #{greaterIntime}
+    </if>
+    <if test="matchTime != null">
+       and match_time >= #{matchTime}
+    </if>
+  </select>
 </mapper>

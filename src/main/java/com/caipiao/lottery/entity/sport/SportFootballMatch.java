@@ -1,9 +1,12 @@
 package com.caipiao.lottery.entity.sport;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SportFootballMatch {
-    private Integer id;
+public class SportFootballMatch implements Serializable{
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private String homeTeam;
 

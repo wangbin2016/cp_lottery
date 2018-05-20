@@ -5,6 +5,8 @@ import com.caipiao.lottery.entity.sport.SportFootballMatch;
 import com.caipiao.lottery.entity.sport.SportLeagueInfo;
 
 public class SportFootballMatchAward extends SportFootballMatch {
+	private static final long serialVersionUID = 1L;
+
 	private SportFootballAward sportFootballAward;
 
 	private SportLeagueInfo sportLeagueInfo;

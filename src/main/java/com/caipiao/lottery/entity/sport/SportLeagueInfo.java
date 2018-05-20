@@ -1,7 +1,11 @@
 package com.caipiao.lottery.entity.sport;
 
-public class SportLeagueInfo {
-    private Integer id;
+import java.io.Serializable;
+
+public class SportLeagueInfo implements Serializable{
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
 
     private String name;
 
