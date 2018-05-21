@@ -27,4 +27,7 @@ public interface SportLeagueInfoMapper {
     
     @Select("SELECT MAX(id) FROM Sport_League_Info")
 	Integer selectTableId();
+
+    @Select("SELECT * FROM Sport_League_Info WHERE id IN (#{leagueInfo})")
+	List<SportLeagueInfo> selectByIds(String leagueInfo);
 }

@@ -6,7 +6,6 @@
     <result column="home_team" jdbcType="VARCHAR" property="homeTeam" />
     <result column="league_info_id" jdbcType="INTEGER" property="leagueInfoId" />
     <result column="guest_team" jdbcType="VARCHAR" property="guestTeam" />
-    <result column="match_time" jdbcType="TIMESTAMP" property="matchTime" />
     <result column="int_time" jdbcType="VARCHAR" property="intTime" />
     <result column="line_id" jdbcType="VARCHAR" property="lineId" />
     <result column="status" jdbcType="INTEGER" property="status" />
@@ -22,7 +21,7 @@
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, home_team, league_info_id, guest_team, match_time, int_time, line_id, status, 
+    id, home_team, league_info_id, guest_team, int_time, line_id, status, 
     home_score, guest_score, conncede, home_group, guest_group, create_time, home_support, 
     draw_support, guest_support, create_date
   </sql>
@@ -38,14 +37,14 @@
   </delete>
   <insert id="insert" parameterType="com.caipiao.lottery.entity.sport.SportFootballMatch">
     insert into sport_football_match (id, home_team, league_info_id, 
-      guest_team, match_time, int_time, 
+      guest_team, int_time, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time, home_support, 
       draw_support, guest_support, create_date
       )
     values (#{id,jdbcType=INTEGER}, #{homeTeam,jdbcType=VARCHAR}, #{leagueInfoId,jdbcType=INTEGER}, 
-      #{guestTeam,jdbcType=VARCHAR}, #{matchTime,jdbcType=TIMESTAMP}, #{intTime,jdbcType=VARCHAR}, 
+      #{guestTeam,jdbcType=VARCHAR}, #{intTime,jdbcType=VARCHAR}, 
       #{lineId,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{homeScore,jdbcType=INTEGER}, 
       #{guestScore,jdbcType=INTEGER}, #{conncede,jdbcType=INTEGER}, #{homeGroup,jdbcType=VARCHAR}, 
       #{guestGroup,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{homeSupport,jdbcType=VARCHAR}, 
@@ -66,9 +65,6 @@
       </if>
       <if test="guestTeam != null">
         guest_team,
-      </if>
-      <if test="matchTime != null">
-        match_time,
       </if>
       <if test="int_time != null">
         int_time,
@@ -123,9 +119,6 @@
       <if test="guestTeam != null">
         #{guestTeam,jdbcType=VARCHAR},
       </if>
-      <if test="matchTime != null">
-        #{matchTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="int_time != null">
         #{intTime,jdbcType=VARCHAR},
       </if>
@@ -179,9 +172,6 @@
       <if test="guestTeam != null">
         guest_team = #{guestTeam,jdbcType=VARCHAR},
       </if>
-      <if test="matchTime != null">
-        match_time = #{matchTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="int_time != null">
         int_time = #{intTime,jdbcType=VARCHAR},
       </if>
@@ -229,7 +219,6 @@
     set home_team = #{homeTeam,jdbcType=VARCHAR},
       league_info_id = #{leagueInfoId,jdbcType=INTEGER},
       guest_team = #{guestTeam,jdbcType=VARCHAR},
-      match_time = #{matchTime,jdbcType=TIMESTAMP},
       int_time = #{intTime,jdbcType=VARCHAR},
       line_id = #{lineId,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
@@ -247,14 +236,14 @@
   </update>
   <insert id="addSportFootballMatchs">
   	insert into sport_football_match (id, home_team, league_Info_Id, 
-      guest_team, match_time, int_time, 
+      guest_team, int_time, 
       line_id, status, home_score, 
       guest_score, conncede, home_group, 
       guest_group, create_time)
     values 
     <foreach collection="matchs" item="match" separator=","> 
 	   (#{match.id,jdbcType=INTEGER}, #{match.homeTeam,jdbcType=VARCHAR}, #{match.leagueInfoId,jdbcType=VARCHAR}, 
-      #{match.guestTeam,jdbcType=VARCHAR}, #{match.matchTime,jdbcType=TIMESTAMP}, #{match.int_time,jdbcType=VARCHAR}, 
+      #{match.guestTeam,jdbcType=VARCHAR}, #{match.int_time,jdbcType=VARCHAR}, 
       #{match.lineId,jdbcType=VARCHAR}, #{match.status,jdbcType=INTEGER}, #{match.homeScore,jdbcType=INTEGER}, 
       #{match.guestScore,jdbcType=INTEGER}, #{match.conncede,jdbcType=INTEGER}, #{match.homeGroup,jdbcType=VARCHAR}, 
       #{match.guestGroup,jdbcType=VARCHAR}, #{match.createTime,jdbcType=TIMESTAMP})
@@ -276,9 +265,6 @@
     </if>
     <if test="greaterIntime != null">
        and int_time >= #{greaterIntime}
-    </if>
-    <if test="matchTime != null">
-       and match_time >= #{matchTime}
     </if>
   </select>
 </mapper>

@@ -14,6 +14,7 @@ import com.caipiao.lottery.dao.sport.SportFootballMatchMapper;
 import com.caipiao.lottery.dao.sport.SportLeagueInfoMapper;
 import com.caipiao.lottery.entity.sport.SportFootballAward;
 import com.caipiao.lottery.entity.sport.SportFootballMatch;
+import com.caipiao.lottery.entity.sport.SportLeagueInfo;
 import com.caipiao.lottery.entity.sport.vo.SportFootballMatchAward;
 import com.caipiao.lottery.entity.sport.vo.SportFootballMatchAwardSearch;
 import com.caipiao.lottery.service.SportFootballDataService;
@@ -73,6 +74,32 @@ public class SportFootballDataServiceImpl implements SportFootballDataService {
 		List<SportFootballMatch>  matchs = sportFootballMatchMapper.selectBySearch(search);
 		List<SportFootballAward>  awards = sportFootballAwardMapper.selectBySearch(search);
 		
+		//
+		StringBuffer sb = new StringBuffer();
+		for(SportFootballMatch match:matchs) {
+			sb.append(match.getLeagueInfoId()).append(",");
+			SportFootballMatchAward matchAward = new SportFootballMatchAward(match);
+			for(SportFootballAward award:awards) {
+				if(award.getId() == match.getId()) {
+					matchAward.setSportFootballAward(award);
+					break;
+				}
+			}
+		}
+		String leagueInfo = sb.substring(0, sb.length()-1);
+		
+		//查询联赛信息
+		List<SportLeagueInfo> leagueInfoList = sportLeagueInfoMapper.selectByIds(leagueInfo);
+		for(SportFootballMatch match:matchs) {
+			sb.append(match.getLeagueInfoId()).append(",");
+			SportFootballMatchAward matchAward = new SportFootballMatchAward(match);
+			for(SportLeagueInfo info:leagueInfoList) {
+				if(info.getId() == match.getLeagueInfoId()) {
+					matchAward.setSportLeagueInfo(info);
+					break;
+				}
+			}
+		}
 		
 		return list;
 	}
