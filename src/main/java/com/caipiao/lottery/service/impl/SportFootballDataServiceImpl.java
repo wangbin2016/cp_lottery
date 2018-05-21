@@ -2,7 +2,6 @@ package com.caipiao.lottery.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,42 +37,61 @@ public class SportFootballDataServiceImpl implements SportFootballDataService {
 	 * 更新或者插入到数据库
 	 */
 	public void saveOrUpdateFootballData(List<SportFootballMatchAward> list) {
-		SportFootballMatchAward mAward = list.get(0);
-		String intime = mAward.getIntTime();
-		List<SportFootballMatch> addMatchList = new ArrayList<SportFootballMatch>();
-		List<SportFootballMatch> updateMatchList = new ArrayList<SportFootballMatch>();
-		List<SportFootballAward> addAwardList = new ArrayList<SportFootballAward>();
-		List<SportFootballAward> updateAwardList = new ArrayList<SportFootballAward>();
+		List<SportFootballMatch> addMatchList = new ArrayList<SportFootballMatch>();//新增阵数数据
+		List<SportFootballAward> addAwardList = new ArrayList<SportFootballAward>();//新增sp数据
+		
+		List<SportFootballMatch> updateMatchList = new ArrayList<SportFootballMatch>();//对阵数据更新
+		List<SportFootballAward> updateAwardList = new ArrayList<SportFootballAward>();//sp数据更新
+				
+		List<SportFootballMatchAward> matchAwardCacheList = getCacheData();//取缓存数据
 		for(SportFootballMatchAward matchAward:list) {
+			boolean cacheHasMatch = false;//默认没有数据
+			for(SportFootballMatchAward matchAwardCache:matchAwardCacheList) {
+				if(matchAward.getId() == matchAwardCache.getId()) {
+					cacheHasMatch = true;//有数据
+					//对阵数据比较
+					if(!matchAward.compareData().equals(matchAwardCache.compareData())) {
+						updateMatchList.add(matchAward);
+					}
+					
+					//sp比较
+					if(!matchAward.getSportFootballAward().compareData().equals(matchAwardCache.getSportFootballAward().compareData())) {
+						updateAwardList.add(matchAward.getSportFootballAward());
+					}
+				}
+			}
 			
-			
-			
-			addMatchList.add(matchAward);
-			addAwardList.add(matchAward.getSportFootballAward());
+			if(!cacheHasMatch) {//缓存没有数据
+				addMatchList.add(matchAward);
+				addAwardList.add(matchAward.getSportFootballAward());
+			}
 		}
 		
 		/**
 		 * 增加新对阵数据到数据库
 		 */
-		sportFootballMatchMapper.addSportFootballMatchs(addMatchList);
-		sportFootballAwardMapper.addSportFootballAwards(addAwardList);
+		if(addMatchList.size() > 0)
+			sportFootballMatchMapper.addSportFootballMatchs(addMatchList);
+		if(addAwardList.size() > 0)
+			sportFootballAwardMapper.addSportFootballAwards(addAwardList);
 		
 		/**
 		 * 更新数据到数据库
 		 */
-		sportFootballMatchMapper.updateSportFootballMatchs(updateMatchList);
-		sportFootballAwardMapper.updateSportFootballAwards(updateAwardList);
+		if(updateMatchList.size() > 0)
+			sportFootballMatchMapper.updateSportFootballMatchs(updateMatchList);
+		if(updateAwardList.size() > 0)
+			sportFootballAwardMapper.updateSportFootballAwards(updateAwardList);
 	}
 	
 	/**
-	 * 查询数据的对阵数据
+	 * 查询对阵数据
 	 * @return
 	 */
 	public List<SportFootballMatchAward> findSportFootballMatchAward(SportFootballMatchAwardSearch search){
 		List<SportFootballMatchAward> list = new ArrayList<SportFootballMatchAward>();
 		List<SportFootballMatch>  matchs = sportFootballMatchMapper.selectBySearch(search);
-		List<SportFootballAward>  awards = sportFootballAwardMapper.selectBySearch(search);
-		
+		List<SportFootballAward>  awards = sportFootballAwardMapper.selectBySearch(search);		
 		//
 		StringBuffer sb = new StringBuffer();
 		for(SportFootballMatch match:matchs) {
@@ -109,20 +127,14 @@ public class SportFootballDataServiceImpl implements SportFootballDataService {
 	 * 取缓存中的对阵数据
 	 * @return
 	 */
-	private List<SportFootballMatchAward> getCacheData(String intime){
-		Map<String,SportFootballMatchAward> mapMatchData = RedisUtils.getMapAll(SportFootballConstant.MATCH_AWARD_KEY,null);
-		if(mapMatchData == null || mapMatchData.size() ==0) {
-			
+	public List<SportFootballMatchAward> getCacheData(){
+		List<SportFootballMatchAward> listMatchAward = RedisUtils.getList(SportFootballConstant.MATCH_AWARD_KEY,null);
+		if(listMatchAward == null || listMatchAward.size() ==0) {
+			SportFootballMatchAwardSearch search = new SportFootballMatchAwardSearch();
+			search.setStatus(1);
+			listMatchAward = findSportFootballMatchAward(search);
+			RedisUtils.setList(SportFootballConstant.MATCH_AWARD_KEY, listMatchAward);			
 		}
-		return null;
+		return listMatchAward;
 	}
-	
-	public boolean dataHasChange(List<?> list) {
-		
-		
-		
-		
-		return  false;
-	}
-	
 }

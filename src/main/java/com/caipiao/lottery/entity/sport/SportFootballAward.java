@@ -165,4 +165,9 @@ public class SportFootballAward implements Serializable{
 				+ ", rqspfStatus=" + rqspfStatus + ", spfStatus=" + spfStatus + ", dgStatus=" + dgStatus
 				+ ", createTime=" + createTime + "]";
 	}
+	
+	public String compareData() {
+		return 	id + intTime + lineId + bfAward + bqcAward + jqsAward +
+				rqspfAward + spfAward + bfStatus + bqcStatus + jqsStatus + rqspfStatus + spfStatus + dgStatus;
+	}
 }

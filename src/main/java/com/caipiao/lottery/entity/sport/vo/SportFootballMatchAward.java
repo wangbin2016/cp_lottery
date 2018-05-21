@@ -5,10 +5,6 @@ import com.caipiao.lottery.entity.sport.SportFootballMatch;
 import com.caipiao.lottery.entity.sport.SportLeagueInfo;
 
 public class SportFootballMatchAward extends SportFootballMatch {
-	
-	
-	
-	
 	private static final long serialVersionUID = 1L;
 
 	private SportFootballAward sportFootballAward;
@@ -55,11 +51,5 @@ public class SportFootballMatchAward extends SportFootballMatch {
 		this.sportLeagueInfo = sportLeagueInfo;
 	}
 
-	@Override
-	public String toString() {
-		return "SportFootballMatchAward [sportFootballAward=" + sportFootballAward + ", sportLeagueInfo="
-				+ sportLeagueInfo + "]"+super.toString();
-	}
 	
-
 }

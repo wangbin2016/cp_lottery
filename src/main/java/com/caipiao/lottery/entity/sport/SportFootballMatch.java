@@ -3,6 +3,8 @@ package com.caipiao.lottery.entity.sport;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.caipiao.common.utils.DateUtils;
+
 public class SportFootballMatch implements Serializable{
 	private static final long serialVersionUID = 1L;
 
@@ -20,7 +22,7 @@ public class SportFootballMatch implements Serializable{
 
     private String lineId;
 
-    private Integer status;
+    private Integer status;//比赛状态1:在售，2:停售，3:取消,4已完结,5已派奖
 
     private Integer homeScore;
 
@@ -181,8 +183,15 @@ public class SportFootballMatch implements Serializable{
 		return "SportFootballMatch [id=" + id + ", homeTeam=" + homeTeam + ", leagueInfoId=" + leagueInfoId
 				+ ", guestTeam=" + guestTeam + ", matchTime=" + matchTime + ", intTime=" + intTime + ", lineId="
 				+ lineId + ", status=" + status + ", homeScore=" + homeScore + ", guestScore=" + guestScore
-				+ ", conncede=" + conncede + ", homeGroup=" + homeGroup + ", guestGroup=" + guestGroup + ","
-				+ " homeSupport=" + homeSupport + ", drawSupport=" + drawSupport + ", guestSupport="
-				+ guestSupport + ", createDate=" + createDate + "]";
+				+ ", conncede=" + conncede + ", homeGroup=" + homeGroup + ", guestGroup=" + guestGroup
+				+ ", homeSupport=" + homeSupport + ", drawSupport=" + drawSupport + ", guestSupport=" + guestSupport
+				+ ", createDate=" + createDate + "]";
 	}
+
+	
+	public String compareData() {
+		return 	id + homeTeam + leagueInfoId + guestTeam + DateUtils.dateToString(matchTime, DateUtils.yyMMdd_HHmmss) + intTime +
+				 lineId + status + homeScore + guestScore + conncede + homeGroup + guestGroup + homeSupport + drawSupport + guestSupport;
+	}
+    
 }
